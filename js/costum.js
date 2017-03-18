@@ -15,7 +15,7 @@
 		});
 
 	$('#toggle-show').click(function(){
-		$('.click-toggle').toggleClass("hidden-sm-down");
+		$('.click-toggle').toggleClass("hidden-xs-down");
 		$(this).hide();
 	});
 		$(window).scroll(function() {

@@ -18,10 +18,16 @@ $color8: #ede22c
 $color9: hsla(0,0%,100%,.65)
 $color-white: #fff
 
+#toggle-show
+	font-weight: 500
+	color: white
+	background: rgba(89, 72, 255, 0.85)
+	
 ::-webkit-scrollbar-track
 	background-color: #F5F5F5
 
 ::-webkit-scrollbar
+	height: 10px
 	width: 10px
 	background-color: #F5F5F5
 
@@ -199,13 +205,19 @@ body
         height: 100%
         
 .sub-item-content
-    height: 120px
-    padding: 0.2em 0.5em
-    width: 100%
-    background-color: rgba(89, 72, 255, 0.85)
-    +vendor (box-shadow, 0 1px 4px 1px rgba(0, 0, 0, 0.1))
-    i
-        color: white
+	text-transform: capitalize
+	text-decoration: none
+	height: 120px
+	padding: 0.2em 0.5em
+	width: 100%
+	background-color: rgba(89, 72, 255, 0.85)
+	+vendor (box-shadow, 0 1px 4px 1px rgba(0, 0, 0, 0.1))
+	&:hover, &:focus
+		text-decoration: none
+	i
+		padding: 0.6rem
+		font-size: 5.5rem
+		color: rgba(255, 255, 255, 0.95)
         
 .item-content
     border-top: 3px solid rgba(89, 72, 255, 0.85)

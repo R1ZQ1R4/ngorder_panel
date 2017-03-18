@@ -11,6 +11,9 @@
 </head>
 <style SASS>
 	@media screen and (max-width: 576px) {
+		.sm-height.canvas{
+			max-height: 300px;
+		}
 		.dropdown-sm-center {
 			transform: translateX(40%);
 			-webkit-transform: -webkit-translateX(40%);
@@ -49,7 +52,7 @@
 	}
 </style>
 
-<body>
+<body style="overflow-x: hidden">
 	<!--       navbar ------------------------------------------------------------------>
 	<nav class="navbar height-nav shadow-nav navku">
 		<div class="nav-content h-100 outside-menu">
@@ -300,26 +303,44 @@
        </div>
    </div>
    -->
-			<div class="col-12 col-md-6 col-lg-3">
-				<div class="sub-item-content">
-					<i class="fa fa-truck fa-4x"></i>
-
-				</div>
+			<div class="col-12 col-sm-6 col-lg-3">
+				<a class="sub-item-content d-flex align-items-center" href="">
+					<i class="fa fa-truck"></i>
+					<div class="w-100 p-2 text-center">
+					<h5 class="text-white" style="font-size: 1em; font-weight: 400">pesanan Hari ini</h5>
+					<h1 class="text-white" style="font-weight: 500">104</h1>
+					</div>
+				</a>
 			</div>
-			<div class="col-12 col-md-6 col-lg-3 ">
-				<div class="sub-item-content">
-					halo
-				</div>
+			<div class="col-12 col-sm-6 col-lg-3 hidden-xs-down click-toggle">
+				<a class="sub-item-content d-flex align-items-center" href="">
+					<i class="fa fa-truck"></i>
+					<div class="w-100 p-2 text-center">
+					<h5 class="text-white" style="font-size: 1em; font-weight: 400">Terjual Hari ini</h5>
+					<h1 class="text-white" style="font-weight: 500">39</h1>
+					</div>
+				</a>
 			</div>
-			<div class="col-12 col-md-6 col-lg-3">
-				<div class="sub-item-content">
-					halo
-				</div>
+			<div class="col-12 col-sm-6 col-lg-3 hidden-xs-down click-toggle">
+				<a class="sub-item-content d-flex align-items-center" href="">
+					<i class="fa fa-truck"></i>
+					<div class="w-100 p-2 text-center">
+					<h5 class="text-white" style="font-size: 1em; font-weight: 400">Costumer baru</h5>
+					<h1 class="text-white" style="font-weight: 500">2</h1>
+					</div>
+				</a>
 			</div>
-			<div class="col-12 col-md-6 col-lg-3">
-				<div class="sub-item-content">
-					halo
-				</div>
+			<div class="col-12 col-sm-6 col-lg-3 hidden-xs-down click-toggle">
+				<a class="sub-item-content d-flex align-items-center" href="">
+					<i class="fa fa-truck"></i>
+					<div class="w-100 p-2 text-center">
+					<h5 class="text-white" style="font-size: 1em; font-weight: 400">Halaman dilihat</h5>
+					<h1 class="text-white" style="font-weight: 500">576</h1>
+					</div>
+				</a>
+			</div>
+			<div class="col-12 hidden-sm-up">
+				<button role="button" id="toggle-show" class="btn btn-block rounded-0" href="">Show</button>
 			</div>
 
 			<div class="col-12 col-md-8 col-xl-8">
@@ -352,7 +373,7 @@
 						</div>
 					</div>
 					<div class="p-3">
-						<canvas id="cart-penjualan" width="100%" height="50px"></canvas>
+						<canvas id="cart-penjualan" width="100%" height="50%"></canvas>
 					</div>
 				</div>
 			</div>
@@ -418,7 +439,7 @@
 						</div>
 					</div>
 					<div class="p-3">
-						<canvas id="cart-rekap" width="100%" height="30px"></canvas>
+						<canvas id="cart-rekap" width="100%" height="40%"></canvas>
 					</div>
 				</div>
 			</div>
@@ -451,7 +472,7 @@
 						</div>
 					</div>
 					<div class="p-3">
-						<canvas id="cart-pesanan" width="100%" height="50px"></canvas>
+						<canvas id="cart-pesanan" width="100%" height="50%"></canvas>
 					</div>
 				</div>
 			</div>
@@ -622,210 +643,9 @@
 	<script src="js/jquery-3.1.0.min.js" type="text/javascript"></script>
 	<script src="js/bootstrap.min.js" type="text/javascript"></script>
 	<script src="js/Chart.min.js" type="text/javascript"></script>
+	<script src="js/costum.js" type="text/javascript"></script>
 	<script>
-		var accord = $('#accordion > li > a');
-		accord.click(function() {
-			if ($(this).parent('li').hasClass('active')) {
-				$(this).next().slideUp(275);
-				$(this).parent('li').removeClass('active');
-			} else {
-				accord.next().slideUp(275);
-				accord.parent('li').removeClass('active');
-				$(this).next().slideDown(275);
-				$(this).parent('li').addClass('active');
-			}
-			//			accord.next().slideUp();
-			//			$(this).next().slideToggle();
-		});
-		$(window).scroll(function() {
-			if ($(this).scrollTop() > 100) {
-				$('.scrolltop').fadeIn();
-			} else {
-				$('.scrolltop').fadeOut();
-			}
-		});
-
-		//Click event to scroll to top
-		$('.scrolltop').click(function(e) {
-			e.preventDefault();
-			$('html, body').animate({
-				scrollTop: 0
-			}, 600);
-			return false;
-		});
-
-		var w = $(window).width();
-		$(function() {
-			if (w < 576) {
-				$('.dim-background').addClass('collapse');
-				$('.outside-menu').addClass('animate-outside-menu');
-				$('.side-menu').addClass('animate-side-menu');
-			} else {
-				$('.outside-menu').removeClass('animate-outside-menu');
-				$('.side-menu').removeClass('animate-side-menu');
-			}
-
-		});
-		$('#nav-icon').click(function() {
-			$('.dim-background').toggleClass('collapse');
-			$('.outside-menu').toggleClass('animate-outside-menu');
-			$('.side-menu').toggleClass('animate-side-menu');
-		});
-		$('.dim-background').click(function() {
-			$(this).addClass('collapse');
-			$('.outside-menu').toggleClass('animate-outside-menu');
-			$('.side-menu').toggleClass('animate-side-menu');
-		});
-
-		var cjual = $('#cart-penjualan'),
-			ccome = $('#cart-pengeluaran-pemasukan'),
-			crekap = $('#cart-rekap'),
-			cpesanan = $('#cart-pesanan');
-
-		var myChart = new Chart(cjual, {
-			type: 'line',
-			data: {
-				labels: ['11 Maret', '12 Maret', '13 Maret', '14 Maret', '15 Maret', '16 Maret', '17 Maret'],
-				datasets: [{
-					fill: true,
-					lineTension: 0.4,
-					backgroundColor: "rgba(89, 72, 255, 0.50)",
-					borderColor: "#384784",
-					borderCapStyle: 'butt',
-					type: 'line',
-					pointBackgroundColor: "#384784",
-					pointBorderWidth: 5,
-					pointHoverBorderColor: "#fff",
-					pointHoverBackgroundColor: "#ec2534",
-					pointHoverBorderWidth: 1,
-					pointHitRadius: 15,
-					label: 'Produk terjual',
-					data: [104, 162, 133, 217, 186, 169, 145],
-				}]
-			},
-			options: {
-				legend: {
-					display: false,
-				},
-				scales: {
-					yAxes: [{
-						stacked: true,
-						ticks: {
-							beginAtZero: true
-						}
-					}]
-				}
-			}
-		});
-
-		var myChart = new Chart(crekap, {
-			type: 'line',
-			data: {
-				labels: ['26 Februari', '27 Februari', '28 Februari', '1 Maret', '2 Maret', '3 Maret', '4 Maret', '5 Maret', '6 Maret', '7 Maret', '8 Maret', '9 Maret', '10 Maret', '11 Maret', '12 Maret', '13 Maret', '14 Maret', '15 Maret', '16 Maret', '17 Maret'],
-				datasets: [{
-					lineTension: 0,
-					fill: false,
-					borderColor: "#384784",
-					borderCapStyle: 'butt',
-					type: 'line',
-					pointBackgroundColor: "#384784",
-					pointBorderWidth: 5,
-					pointHoverBorderColor: "#fff",
-					pointHoverBackgroundColor: "#ec2534",
-					pointHoverBorderWidth: 1,
-					pointHitRadius: 15,
-					label: 'Produk terjual',
-					data: [98, 87, 121, 174, 263, 74, 237, 163, 281, 130, 231, 129, 116, 104, 162, 133, 217, 186, 169, 145],
-				}, {
-					lineTension: 0,
-					fill: false,
-					borderColor: "rgba(237, 226, 44, 0.7)",
-					borderCapStyle: 'butt',
-					type: 'line',
-					BackgroundColor: "rgba(237, 226, 44, 0.7)",
-					pointBackgroundColor: "rgba(237, 226, 44, 0.7)",
-					pointBorderWidth: 5,
-					pointHoverBorderColor: "#fff",
-					pointHoverBackgroundColor: "#ec2534",
-					pointHoverBorderWidth: 1,
-					pointHitRadius: 15,
-					label: 'Pesanan',
-					data: [82, 37, 31, 75, 63, 75, 37, 63, 21, 30, 31, 28, 16, 05, 12, 33, 27, 26, 68, 55],
-				}]
-			},
-			options: {
-				legend: {
-					position: 'top',
-					labels: {
-						boxWidth: 24,
-
-					}
-				},
-				scales: {
-					yAxes: [{
-						ticks: {
-							beginAtZero: true
-						}
-					}]
-				}
-			}
-		});
-
-		var myDoughnutChart = new Chart(ccome, {
-			type: 'doughnut',
-			data: {
-				labels: ["Pemasukan", "Pengeluaran"],
-				datasets: [{
-					data: [325000, 147000],
-					backgroundColor: [
-						"rgba(89, 72, 255, 0.7)",
-						"rgba(237, 226, 44, 0.7)"
-					],
-					hoverBackgroundColor: [
-						"rgba(89, 72, 255, 0.7)",
-						"rgba(237, 226, 44, 0.7)"
-					]
-				}]
-
-			},
-			options: {
-				legend: {
-					position: 'top',
-					labels: {
-						boxWidth: 24,
-
-					}
-				},
-				animation: {
-					animateScale: true
-				}
-			}
-		});
-
-		var data3 = new Chart(cpesanan, {
-			type: 'bar',
-			data: {
-				labels: ['11 Maret', '12 Maret', '13 Maret', '14 Maret', '15 Maret', '16 Maret', '17 Maret'],
-				datasets: [{
-					label: "Pesanan",
-					backgroundColor: '#384784',
-					borderWidth: 1,
-					data: [65, 59, 80, 81, 56, 55, 40],
-				},{
-					label: "Sukses",
-					backgroundColor: '#1B5E20',
-					borderWidth: 1,
-					data: [49, 47, 75, 64, 40, 55, 37],
-				},
-						   {
-					label: "Batal",
-					backgroundColor: '#C62828',
-					borderWidth: 1,
-					data: [16, 12, 5, 17, 16, 0, 3],
-				},
-						  ]
-			}
-		});
+		
 	</script>
 </body>
 

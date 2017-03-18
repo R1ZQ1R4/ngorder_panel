@@ -1,0 +1,331 @@
+@import color
+@import reset
+=vendor($property, $value)
+    -webkit-#{$property}: $value
+    -moz-#{$property}: $value
+    -ms-#{$property}: $value
+    -o-#{$property}: $value
+    $property: $value
+
+$color1: #384784
+$color2: #ec2534
+$color3: #f8c84f
+$color4: #34b471
+$color5: #292b2c
+$color6: #fafafa
+$color7: #f5f5f5
+$color8: #ede22c
+$color9: hsla(0,0%,100%,.65)
+$color-white: #fff
+
+::-webkit-scrollbar-track
+	background-color: #F5F5F5
+
+::-webkit-scrollbar
+	width: 10px
+	background-color: #F5F5F5
+
+::-webkit-scrollbar-thumb
+	border-radius: 10px
+	-webkit-box-shadow: inset 0 0 6px rgba(0,0,0,.2)
+	background-color: rgba(89, 72, 255, 0.85)
+
+.table td
+	vertical-align: middle !important
+
+.btn-proses
+	background: $red-500
+	color: white
+	&:hover
+		background: $red-600
+
+h1, h2, h3, h4, h5
+    color: #333
+.decoration-none
+    a
+        text-decoration: none !important
+.bg-none
+    background: none
+    
+.animate-menu
+    +vendor(transition-duration, 300ms)
+    +vendor(transition-timing-function, ease-in-out)
+    
+.outside-menu
+    @extend .animate-menu
+    margin-left: 220px
+    
+.animate-outside-menu
+    margin-left: 0 !important
+    
+body
+    background-color: rgba($color8, 0.9)
+//    background-color: $color7
+
+.dim-background
+    @extend .fixed
+    @extend .over-hide
+    top: 0
+    z-index: 5 !important
+    width: 100%
+    height: 100%
+    background: rgba(0,0,0,0.8)
+    
+.fixed
+    position: fixed
+
+.over-hide
+    overflow: hidden
+    
+.over-auto
+    overflow: auto
+    
+.animate-side-menu
+    margin-left: -220px
+    
+.side-menu
+    @extend .animate-menu
+    left: 0
+    top: 0
+    z-index: 6 !important
+    width : 100%
+    height: 100%
+    max-width: 220px
+    @extend .fixed 
+    @extend .over-auto
+    +bg-color($color1)
+    
+    
+    .menu-icon
+        margin-right: 0.5em;
+        height: 26px
+        width: 26px
+        vertical-align: bottom
+        
+    .menu-icon-collapse
+        position: absolute
+        margin-right: 0
+        right: 1em
+        height: 12px
+        width: 12px
+        vertical-align: top
+        margin-top: 7px
+        
+.scrolltop
+    border-radius: 5px
+    display: block
+    position: fixed
+    right: 1em
+    bottom: 1em
+    width: 3em
+    height: 3em
+    background: rgba(lighten($color1, 15%), 0.9)
+    +vendor (box-shadow, 0 0 3px 1px rgba(0, 0, 0, 0.2))
+    color: rgba(255, 255, 255, 0.7)
+    
+    &:hover, &:focus, &:active
+        text-decoration: none
+        color: rgba(255, 255, 255, 1)
+    
+    
+.navku
+    background-color: white
+    right: 0
+    top: 0
+    width: 100%
+    z-index: 3
+    position: fixed
+    
+.height-nav
+    height: 68px
+
+.nav-conetnt
+    position: absolute;
+    right: 0;
+    width: calc(100% - 220px);
+.lighten-color1
+    color: lighten($color1, 15%)
+    
+.quick-btn
+    position: relative
+    i
+        color: lighten($color1, 40%)
+        &:hover, &:focus, &:active
+            color: rgba(89, 72, 255, 0.75)
+
+.quick-icon
+    background-color: $red-400
+    font-size: 0.75em
+    color: white
+    padding: 0.25em
+    width: 2em
+    height: 2em
+    position: absolute
+    top: -45%
+    right: -25%
+    
+.user-icon
+    height: 40px
+    width: 40px
+.shadow-nav
+    +vendor (box-shadow, 0 0 4px 1px rgba(0, 0, 0, 0.4))
+.shadow-ul
+    +vendor (box-shadow, inset -1px 2px 8px rgba(0, 0, 0, 0.2))
+    
+.shadow-menu
+    
+.page-view-text
+    font-size: 1.8em
+    margin: 0
+    font-weight: 400
+
+.square
+    position: relative
+    width: 40%
+    &:after 
+        content: ""
+        display: block
+        padding-bottom: 100%
+    .content 
+        position: absolute
+        width: 100%
+        height: 100%
+.square-text
+    position: relative
+    width: 50%
+    .content 
+        position: absolute
+        width: 100%
+        height: 100%
+        
+.sub-item-content
+    height: 120px
+    padding: 0.2em 0.5em
+    width: 100%
+    background-color: rgba(89, 72, 255, 0.85)
+    +vendor (box-shadow, 0 1px 4px 1px rgba(0, 0, 0, 0.1))
+    i
+        color: white
+        
+.item-content
+    border-top: 3px solid rgba(89, 72, 255, 0.85)
+    width: 100%
+    background: white
+    +vendor (box-shadow, 0 1px 4px 1px rgba(0, 0, 0, 0.2))
+        
+
+.item-title
+    height: 54px
+    border-bottom: 1px solid $color7
+    
+    
+.item-judul
+    padding: 1.2em 0.8em
+    h5
+        color: $color5
+        margin: 0
+        font-size: 1em
+    
+.item-btn
+    margin-right: 0.4em 
+    
+    .item-icon
+        >a
+            width: 40px
+            height: 54px
+            i
+                width: 22px
+                height: 22px
+                vertical-align: middle
+                color: rgba(89, 72, 255, 0.85)
+                
+.dropdown-menu
+    +vendor (box-shadow, 0 0 3px 1px rgba(0, 0, 0, 0.2))
+    border-radius: 0 !important
+    font-size: 0.9em
+    color: #333
+    .dropdown-item
+        text-transform: capitalize
+        font-size: 0.9em
+        padding: 0.8em 1em !important
+        i
+            text-align: center
+            color: rgba(0, 0, 0, 0.4)
+            width: 1.2em
+            margin-right: 0.5em
+    
+$color1-dark: darken( $color1, 6% )
+$color3-dark: darken( $color1, 10% )
+
+.menu-list
+    padding-bottom: 3em
+    >ul
+        >li
+            text-transform: capitalize
+            &:hover, &:focus, &:active
+                background-color: #2f3b6f
+            &.active
+                background-color: #2f3b6f
+            a
+                padding: 1em 1.2em;
+                display: block;
+                text-decoration: none;
+                font-size: 0.9em;
+                color: white;
+                fill: #f5f5f5;
+                i
+                    margin-right: 6px
+                    font-size: 0.9em !important
+                
+                .menu-down
+                    padding: 0.7em 0
+                    float: right
+                    font-size: 0.6em
+                    text-align: right
+                    margin-right: 4px
+            ul
+                padding: 0.6em 0
+                background-color: $color3-dark
+                li
+                    a
+                        padding: 0.9em 2.4em
+                        i
+                            vertical-align: middle
+                            font-size: 0.35em !important
+                            opacity: 0.2
+                    a:hover
+                        text-decoration: underline
+
+.badge-notif
+    color: #fafafa
+    margin-left: 5px
+    text-transform: capitalize
+    font-size: 0.7em
+    padding: 0.3em 0.5em
+    background-color: $teal-500
+    font-weight: 700
+
+.badge-notif2
+	float: right
+	margin-top: 3px
+	margin-left: 5px
+	text-align: center
+	color: #f5f5f5
+	text-transform: capitalize
+	font-size: 0.7rem
+	font-weight: 600
+
+.bg-red500
+	background-color: $red-500
+
+.bg-green500
+	background-color: $green-500
+                
+                    
+footer
+    +vendor (box-shadow, 0 -1px 4px 1px rgba(0, 0, 0, 0.1))
+    border-top: 2px solid $color7
+    font-weight: 700
+    color: rgba(89, 72, 255, 0.75)
+    background: white
+    font-size: 0.9em

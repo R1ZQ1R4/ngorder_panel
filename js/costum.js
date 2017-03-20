@@ -11,8 +11,7 @@ $(document).ready(function () {
 		//		fungsi handler-----------------------------------------------
 		func = {
 			resize: function () {
-				if (w < 576) {
-					$('.dim-background').addClass('collapse');
+				if (w < 768) {
 					$('.outside-menu').addClass('animate-outside-menu');
 					$('.side-menu').addClass('animate-side-menu');
 				} else {
@@ -24,6 +23,10 @@ $(document).ready(function () {
 
 			default: function (e) {
 				e.preventDefault();
+			},
+			
+			stop: function (e) {
+				e.stopPropagation();
 			},
 
 			accord: function (e) {
@@ -40,6 +43,23 @@ $(document).ready(function () {
 			}
 		};
 	//	Aksi Action---------------------------------------------
+	$('.btn-search-nav').click(function (e) {
+		$('.search-nav').toggleClass('show');
+		e.stopPropagation();
+	});
+	
+	$('.btn-apps-nav').click(function (e) {
+		$('.apps-nav').fadeIn(275);
+		e.stopPropagation();
+	});
+	
+	$('.search-nav').on('click', func.stop);
+	
+	$(document).click(function () {
+		$(".search-nav").removeClass('show');
+		$('.apps-nav').fadeOut(225);
+		
+	});
 	//	prevent default a
 	$('.default').on('click', func.default);
 
@@ -51,7 +71,6 @@ $(document).ready(function () {
 	});
 	//auto resize mobile version
 	$(func.resize);
-
 	//accordion ul li a 
 	accord.on('click', func.accord);
 
@@ -76,6 +95,8 @@ $(document).ready(function () {
 	});
 
 	//smooth scroll top
+	$('.scroll-top').hide();
+
 	$(window).scroll(function () {
 		if ($(this).scrollTop() < 100) {
 			$('.scroll-top').fadeOut();

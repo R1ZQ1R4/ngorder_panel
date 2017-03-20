@@ -1,5 +1,7 @@
 @import color
 @import reset
+@import waves
+
 =vendor($property, $value)
 	-webkit-#{$property}: $value
 	-moz-#{$property}: $value
@@ -69,6 +71,31 @@ $text-l-4: rgba(255, 255, 255, 0.12)
 
 *
 	+vendor(transition-timing-function, cubic-bezier(0.19, 1, 0.22, 1))
+	
+//hide-nav
+.search-nav
+	left: 0
+	@extend .height-nav, .shadow-nav
+	width: 100%
+	height: 100%
+	+bg-color($mono-f)
+	z-index: 99
+	position: fixed
+	top: -100px
+	+vendor(transition, all 300ms)
+	&.show
+		top: 0 !important
+	
+.apps-nav
+	+bg-color($color1)
+	display: none
+	position: fixed
+	top: 0
+	left: 0
+	z-index: 99
+	@extend .height-nav, .shadow-nav
+	width: 100%
+	height: 100%
 
 // navbar -------------------------------------------------
 .navku
@@ -82,7 +109,7 @@ $text-l-4: rgba(255, 255, 255, 0.12)
 .height-nav
 	height: 68px
 
-.nav-conetnt
+.nav-content
 	position: absolute
 	right: 0
 	width: 100%
@@ -241,6 +268,8 @@ body
 					background-color: #2f3b6f
 				&.active
 					background-color: #2f3b6f
+					.menu-down
+						+vendor(transform, rotate(90deg))
 				a
 					padding: 1em 1.2em
 					display: block
@@ -255,11 +284,12 @@ body
 						width: 1rem
 						margin-right: 0.4rem
 					.menu-down
-						padding: 0.7em 0
+						padding: 0.4em 0
 						float: right
-						font-size: 0.6em
+						font-size: 0.9em
 						text-align: right
-						margin-right: 4px
+						margin-right: 0.4em
+						+vendor(transition, all 300ms)
 				ul
 					padding: 0.6em 0
 					background-color: $color3-dark
@@ -407,19 +437,15 @@ body
 	font-size: 0.7rem
 	font-weight: 600
 
-.bg-red500
-	background-color: $red-500
-
-.bg-green500
-	background-color: $green-500
 	
 footer
-	+vendor (box-shadow, 0 -1px 4px 1px rgba(0, 0, 0, 0.1))
 	border-top: 2px solid $color7
 	font-weight: 700
 	color: rgba(89, 72, 255, 0.75)
 	background: white
 	font-size: 0.9em
+	+vendor(box-shadow, 0 2px 5px rgba(0, 0, 0, 0.16))
+	+vendor(box-shadow, 0 2px 10px rgba(0, 0, 0, 0.12))
 
 @media screen and (min-width: 768px)
 	.outside-menu

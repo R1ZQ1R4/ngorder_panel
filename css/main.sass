@@ -9,7 +9,7 @@
 	-o-#{$property}: $value
 	$property: $value
 
-$color1: #384784
+$color1: $lightBlue-900
 $color2: #ec2534
 $color3: #f8c84f
 $color4: #34b471
@@ -26,12 +26,15 @@ $text-d-1: rgba(0, 0, 0, 0.87)
 $text-d-2: rgba(0, 0, 0, 0.54)
 $text-d-3: rgba(0, 0, 0, 0.38)
 $text-d-4: rgba(0, 0, 0, 0.12)
+$text-d-5: rgba(0, 0, 0, 0.08)
+$text-d-icon: rgba(0, 0, 0, 0.26)
 
 $text-l-1: rgba(255, 255, 255, 1)
 $text-l-2: rgba(255, 255, 255, 0.7)
 $text-l-3: rgba(255, 255, 255, 0.5)
 $text-l-4: rgba(255, 255, 255, 0.12)
-
+$text-l-5: rgba(255, 255, 255, 0.8)
+$text-l-icon: rgba(255, 255, 255, 0.3)
 
 
 // material design---------------------------------------------------
@@ -73,6 +76,9 @@ $text-l-4: rgba(255, 255, 255, 0.12)
 	+vendor(transition-timing-function, cubic-bezier(0.19, 1, 0.22, 1))
 	
 //hide-nav
+.padding-nav
+	padding: 0 0.75rem
+
 .search-nav
 	left: 0
 	@extend .height-nav, .shadow-nav
@@ -83,8 +89,21 @@ $text-l-4: rgba(255, 255, 255, 0.12)
 	position: fixed
 	top: -100px
 	+vendor(transition, all 300ms)
+	@extend .padding-nav
 	&.show
 		top: 0 !important
+	.search
+		input[type="text"]
+			+vendor(transition, width 225ms ease-out)
+			width: 50%
+			padding: 0.5em 1em
+			border-radius: 2px
+			border: 1px solid $text-d-4
+			font-size: 0.9em
+			color: $text-d-1
+			&:focus
+				width: calc(50% + 2em)
+	
 	
 .apps-nav
 	+bg-color($color1)
@@ -92,7 +111,8 @@ $text-l-4: rgba(255, 255, 255, 0.12)
 	position: fixed
 	top: 0
 	left: 0
-	z-index: 99
+	z-index: 98
+	@extend .padding-nav
 	@extend .height-nav, .shadow-nav
 	width: 100%
 	height: 100%
@@ -103,7 +123,7 @@ $text-l-4: rgba(255, 255, 255, 0.12)
 	right: 0
 	top: 0
 	width: 100%
-	z-index: 3
+	z-index: 97
 	position: fixed
 	
 .height-nav
@@ -115,35 +135,39 @@ $text-l-4: rgba(255, 255, 255, 0.12)
 	width: 100%
 
 .logo
-	padding: 0 1.5em 0 0.75em
+	@extend .padding-nav
 	+bg-color($color1)
 	width: 220px
-	.logo-btn
-		display: flex
-		align-items: center
-		+vendor(transition, background-color 300ms)
-		padding: 0 0.7em
-		height: 100%
+.logo-btn
+	display: flex
+	align-items: center
+	+vendor(transition, background-color 300ms)
+	padding: 0 0.7em
+	height: 100%
+	color: $text-l-2 !important
+	&:focus
 		color: $text-l-2
-		&:hover
-			+bg-color($text-d-4)
-			color: $text-l-1
+	&:hover, &:active
+		+bg-color($text-d-5)
+		color: $text-l-1
+
 .st0, .st1
 	fill: $mono-f
 
 .right-nav
 	li
 		height: 100%
-		.quick-btn
-			padding: 0 0.6em
-			color: lighten($color1, 40%)
-			height: 100%
-			display: flex
-			align-items: center
-			+vendor(transition, background-color 300ms)
-			&:hover, &:focus, &:active
-				color: rgba(89, 72, 255, 0.75)
-				+bg-color($text-d-4)
+
+.quick-btn
+	padding: 0 0.6em
+	color: $text-d-icon !important
+	height: 100%
+	display: flex
+	align-items: center
+	+vendor(transition, background-color 300ms)
+	&:hover, &:focus, &:active
+		color: $lightBlue-700 !important
+		background-color: $text-d-5
 
 .quick-icon
 	background-color: $red-400
@@ -160,11 +184,30 @@ $text-l-4: rgba(255, 255, 255, 0.12)
 	+vendor (box-shadow, 0 2px 5px rgba(0, 0, 0, 0.16))
 	
 .dropdown-menu
-	
-	+vendor (box-shadow, 0 0 3px 1px rgba(0, 0, 0, 0.2))
-	border-radius: 0 !important
+	z-index: 2 !important
+	margin-top: 0 !important
+	border: 1px solid $grey-300 !important
+	min-width: 200px
+	+vendor (box-shadow, 0 1px 1px 1px rgba(0, 0, 0, 0.12))
+	border-radius: 2px !important
 	font-size: 0.9em
 	color: #333
+	&-right:before
+		left: 90% !important
+	&-center:before
+		left: 50% !important
+	&:before
+		+vendor(transform, rotate(45deg))
+		border: 6px solid 
+		border-color: white transparent transparent white
+		top: -8px
+		left: 10%
+		content: " "
+		height: 0
+		width: 0
+		position: absolute
+		+vendor (transform-origin, 0 0)
+		+vendor (box-shadow, -1.5px -1.5px 3px 0px rgba(0, 0, 0, 0.15))
 	.dropdown-item
 		text-transform: capitalize
 		font-size: 0.9em
@@ -223,6 +266,7 @@ h1, h2, h3, h4, h5
 html
 	overflow-y: overlay !important
 body
+	font-family: Roboto, Helvetica, sans-serif !important
 	+bg-color($grey-300)
 //	background-color: $color7
 
@@ -256,52 +300,54 @@ body
 	width : 100%
 	height: calc(100% - 68px)
 	max-width: 220px
-	+bg-color($grey-900)
+	+bg-color($mono-f)
 	overflow-y: overlay
 	.menu-list
-		padding-bottom: 2.5em
+		padding: 0.5em 0 2.5em 0
 		>ul
 			>li
 				text-transform: capitalize
 				+vendor(transition, background-color 300ms)
 				&:hover, &:focus, &:active
-					background-color: #2f3b6f
+					background-color: $text-d-5
 				&.active
-					background-color: #2f3b6f
+					background-color: $text-d-5
+					>a
+						color: $lightBlue-700
 					.menu-down
 						+vendor(transform, rotate(90deg))
 				a
-					padding: 1em 1.2em
+					padding: 1em
+					position: relative
 					display: block
 					text-decoration: none
-					font-size: 0.9em
-					color: $text-l-2
-					fill: $text-l-3
-					&:hover, &:focus, &:active
-						color: $text-l-1
-						fill: $text-l-1
+					font-weight: 400
+					font-size: 0.875em
+					color: #868686
+					fill: #868686
+					&:hover
+						color: $lightBlue-700
+						fill: $lightBlue-700
 					i
-						width: 1rem
+						vertical-align: middle
+						font-size: 1.125rem
+						width: 1.3rem
 						margin-right: 0.4rem
 					.menu-down
-						padding: 0.4em 0
+						padding: 0.1em 0
 						float: right
-						font-size: 0.9em
-						text-align: right
+						font-size: 1rem
 						margin-right: 0.4em
 						+vendor(transition, all 300ms)
 				ul
 					padding: 0.6em 0
-					background-color: $color3-dark
+					background-color: $mono-f
 				li
 					a
-						padding: 0.9em 2.4em
-						i
-							vertical-align: middle
-							font-size: 0.35em !important
-							opacity: 0.2
-					&:hover
-						text-decoration: underline
+						padding: 0.9em 0 0.9em 3em
+						width: 100%
+						&:hover
+							color: $lightBlue-700
 	.menu-icon
 		margin-right: 0.5em
 		height: 26px
@@ -372,13 +418,28 @@ body
 		height: 100%
 		
 .sub-item-content
+	border-radius: 2px
 	text-transform: capitalize
 	text-decoration: none
 	height: 120px
 	padding: 0.2em 0.5em
 	width: 100%
-	background-color: rgba(89, 72, 255, 0.85)
 	+vendor (box-shadow, 0 1px 4px 1px rgba(0, 0, 0, 0.1))
+	&.bg1
+		+bg-color($amber-400)
+	&.bg2
+		+bg-color($yellow-600)
+	&.bg3
+		+bg-color($yellow-700)
+	&.bg4
+		+bg-color($yellow-A700)
+	&.bg5
+		+bg-color(rgba(255, 235, 59, 1))
+	&.bg6
+		+bg-color($amber-500)
+	&.bg7
+		+bg-color($amber-A200)
+
 	&:hover, &:focus
 		text-decoration: none
 	i
@@ -387,7 +448,8 @@ body
 		color: rgba(255, 255, 255, 0.95)
 		
 .item-content
-	border-top: 3px solid rgba(89, 72, 255, 0.85)
+	border-radius: 2px
+	border-top: 3px solid $lightBlue-800
 	width: 100%
 	background: white
 	+vendor (box-shadow, 0 1px 4px 1px rgba(0, 0, 0, 0.2))
@@ -418,25 +480,23 @@ body
 				vertical-align: middle
 				color: rgba(89, 72, 255, 0.85)
 
-.badge-notif
-	color: #fafafa
-	margin-left: 5px
-	text-transform: capitalize
-	font-size: 0.7em
-	padding: 0.3em 0.5em
-	background-color: $teal-500
-	font-weight: 700
 
-.badge-notif2
-	float: right
-	margin-top: 3px
-	margin-left: 5px
+.badge
+	line-height: auto
+	vertical-align: middle
+	margin-right: 2.5em
 	text-align: center
-	color: #f5f5f5
+	color: white
+	min-width: 24px
 	text-transform: capitalize
-	font-size: 0.7rem
-	font-weight: 600
-
+	font-size: 0.625rem
+	padding: 4px 6px 3px 5px !important
+	&.right
+		float: right
+	&.danger
+		background-color: $red-500
+	&.teal
+		background-color: $teal-500
 	
 footer
 	border-top: 2px solid $color7
@@ -446,12 +506,55 @@ footer
 	font-size: 0.9em
 	+vendor(box-shadow, 0 2px 5px rgba(0, 0, 0, 0.16))
 	+vendor(box-shadow, 0 2px 10px rgba(0, 0, 0, 0.12))
+	
+//animate
+.animated
+	-webkit-animation-duration: 1s
+	animation-duration: 1s
+	-webkit-animation-fill-mode: both
+	animation-fill-mode: both
+
+
+@keyframes swing
+	20%
+		-webkit-transform: rotate3d(0, 0, 1, 15deg)
+		transform: rotate3d(0, 0, 1, 15deg)
+	
+	40%
+		-webkit-transform: rotate3d(0, 0, 1, -10deg)
+		transform: rotate3d(0, 0, 1, -10deg)
+	
+	60%
+		-webkit-transform: rotate3d(0, 0, 1, 5deg)
+		transform: rotate3d(0, 0, 1, 5deg)
+	
+	80%
+		-webkit-transform: rotate3d(0, 0, 1, -5deg)
+		transform: rotate3d(0, 0, 1, -5deg)
+	
+	to
+		-webkit-transform: rotate3d(0, 0, 1, 0deg)
+		transform: rotate3d(0, 0, 1, 0deg)
+	
+.swing
+	-webkit-transform-origin: top center
+	transform-origin: top center
+	-webkit-animation-name: swing
+	animation-name: swing
+
 
 @media screen and (min-width: 768px)
 	.outside-menu
 		+vendor(transition-duration, 275ms)
 		margin-left: 220px
 
+@media screen and (max-width: 768px)
+	.search
+		input[type="text"]
+			width: 88% !important
+			&:focus
+				width: calc(88% + 1.5em) !important
+	
 @media screen and (max-width: 576px)
 	.logo
 		width: 100%
@@ -459,3 +562,7 @@ footer
 		max-height: 300px
 	.dropdown-sm-center
 		+vendor(transform, translateX(40%))
+	
+@media screen and (max-width: 320px)
+	.hidden-xxs-down
+		display: none !important

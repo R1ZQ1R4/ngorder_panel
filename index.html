@@ -35,35 +35,71 @@
 </style>
 
 <body>
-<!--search-->
-<section class="search-nav">
-	<div class="fluid-container h-100">
-		<div class="search d-flex justify-content-center align-items-center h-100">
-			<input class="w-50" type="text" placeholder="Search">
+	<!--search-->
+	<section class="search-nav">
+		<div class="fluid-container h-100">
+			<div class="search d-flex justify-content-center align-items-center h-100">
+				<input class="" type="text" placeholder="Search">
+			</div>
 		</div>
-	</div>
-</section>
+	</section>
 
-<!--search-->
-<section class="apps-nav">
-	<div class="fluid-container h-100">
-		<div class="search d-flex justify-content-center align-items-center h-100">
-			
+	<!--apps-->
+	<section class="apps-nav">
+		<div class="fluid-container h-100">
+			<div class="d-flex justify-content-between align-items-center h-100">
+				<div class="h-100">
+					<a role="button" class="logo-btn waves-effect waves-light nav-icon">
+						<i class="material-icons md-17">menu</i>
+					</a>
+				</div>
+
+				<div class="nav h-100" style="">
+					<li class="h-100">
+						<a class="logo-btn btn-search-nav waves-effect waves-light" role="button">
+							<i class="material-icons md-15">search</i>
+						</a>
+					</li>
+					
+					<li class="dropdown h-100">
+						<a id="toggle_add_fast" role="button" data-toggle="dropdown" title="Tambah cepat" class="logo-btn waves-effect waves-light ">
+							<i class="material-icons md-15">add</i>
+						</a>
+					</li>
+
+
+					<li class="dropdown h-100 oppai">
+						<a role="button" data-toggle="dropdown" title="Pemberitahuan" class="oppai logo-btn waves-effect waves-light">
+							<i class="material-icons md-15">notifications_none</i>
+							<span class="rounded-circle quick-icon oppai">8</span>
+						</a>
+						<div class="dropdown-menu dropdown-menu-right oppai" >
+							<div class="text-center font-weight-bold">Pemberitahuan</div>
+							<div class="dropdown-divider"></div>
+
+
+
+						</div>
+
+					</li>
+				</div>
+
+			</div>
 		</div>
-	</div>
-</section>
+	</section>
 	<!--       navbar ------------------------------------------------------------------>
 	<nav class="height-nav shadow-nav navku  decoration-none">
 		<div class="nav-content h-100">
-			<div class="row no-gutters align-items-center h-100">
+			<div class="row no-gutters h-100">
 				<div class="col d-flex justify-content-between align-items-center h-100">
-					<div class="logo px-2 d-flex align-items-center h-100">
-						<div class="h-100 d-flex">
-						<a role="button" class="default logo-btn waves-effect waves-light" id="nav-icon" href="">
-							<i class="material-icons md-17">menu</i>
-						</a>
+					<div class="logo px-2 d-flex align-items-center h-100 justify-content-between justify-content-sm-start">
+						<div class="h-100">
+							<a role="button" class="default logo-btn waves-effect waves-light nav-icon" href="">
+								<i class="material-icons md-17">menu</i>
+							</a>
 						</div>
-						<a class="d-flex justify-content-center w-100 h-100 align-items-center" href="#">
+						<div class="ml-sm-2 h-100 hidden-xxs-down">
+						<a class="h-100 d-flex align-items-center" href="#">
 							<svg class="" id="Layer_1" xmlns="http://www.w3.org/2000/svg" viewBox="-197 351 403.2 99" height="30">
   <g id="XMLID_21_">
     <path id="XMLID_38_" class="st0" d="M-51.7 383.8v33.9c0 2.3-1.5 4.5-3.7 5.2-.7.3-1.4.4-2 .4-1.6 0-3.2-.8-4.3-2l-18.1-21.9v18.3c0 3.1-2.5 5.6-5.7 5.6-3.1 0-5.6-2.5-5.6-5.6v-33.9c0-2.4 1.5-4.5 3.7-5.3.7-.3 1.4-.4 2-.4 1.6 0 3.2.8 4.3 2l18.3 21.9v-18.2c0-3.2 2.5-5.7 5.6-5.7 3-.1 5.5 2.4 5.5 5.7z"/>
@@ -77,28 +113,24 @@
   <path class="st1" d="M-110.6 374l-7.8-13.4c-1.8-3.3-5.1-5.4-8.8-5.4h-47.9c-3.7 0-7.1 2-8.9 5.3l-7.6 14.3c-.4 1.1-.6 2.1-.6 3.7v59.8c0 4.4 3.6 7.4 8 7.4h66.8c4.4 0 7.4-3.1 7.4-7.4v-59.7c-.1-.8-.1-3.6-.6-4.6zm-72.3-6.9h17.9l1.1-3.6h-17l.5-1.1c1.1-2 3.1-3.5 5.4-3.5h48c2.3 0 4.3 1.4 5.4 3.6l.5 1.1H-138l1.1 3.6h17.9l2 3.9h-67.9l2-4zm19.7 74.7v-35.5c0-6 6.1-11 12.2-11 6 0 12.2 4.9 12.2 11v35.5H-163.2z"/>
 </svg>
 						</a>
-						<div class="h-100 d-flex justify-content-end hidden-sm-up">
-						<a role="button" class="default logo-btn waves-effect waves-light btn-search-nav" href="">
-							<i class="material-icons md-17">search</i>
-						</a>
-						<a role="button" class="default logo-btn waves-effect waves-light btn-apps-nav" href="">
-							<i class="material-icons md-17">apps</i>
-						</a>
+			</div>
+						<div class="h-100 d-inline-flex hidden-sm-up">
+							<a role="button" class="default logo-btn waves-effect waves-light btn-search-nav" href="">
+								<i class="material-icons md-17">search</i>
+							</a>
+							<a role="button" class="default logo-btn waves-effect waves-light btn-apps-nav" href="">
+								<i class="material-icons md-17">apps</i>
+							</a>
 						</div>
 					</div>
-					
-					<div class="right-nav hidden-xs-down decoration-none h-100 pr-2">
-						<ul class="nav d-flex align-items-center h-100 float-right" style="">
-							<li>
-								<a class="quick-btn btn-search-nav default waves-effect waves-light" role="button" >
-									<i class="material-icons md-15">search</i>
+
+					<div class="hidden-xs-down decoration-none h-100 px-2 d-flex justify-content-between" style="width: calc(100% - 220px)">
+						<ul class="nav h-100" style="">
+						<li class="dropdown h-100">
+								<a role="button" data-toggle="dropdown" title="Tambah cepat" class="quick-btn waves-effect waves-light ">
+									<i class="material-icons md-15">add_circle_outline</i>
 								</a>
-							</li>
-							<li class="dropdown">
-								<a role="button" data-toggle="dropdown" title="Tambah cepat" class="quick-btn waves-effect waves-light " href="">
-									<i class="material-icons md-15">add</i>
-								</a>
-								<div class="dropdown-menu dropdown-menu-right dropdown-sm-center mt-1">
+								<div class="dropdown-menu dropdown-sm-center" id="add-fast">
 									<div class="text-center font-weight-bold">Tambah Cepat</div>
 									<div class="dropdown-divider"></div>
 									<a class="dropdown-item" href=""><i class="material-icons md-1">add_shopping_cart</i>
@@ -113,21 +145,43 @@
                                     Tambah penyuplai</a>
 								</div>
 							</li>
-							<li class="dropdown">
-								<a role="button" data-toggle="dropdown" title="Pemberitahuan" class="quick-btn waves-effect waves-light" href="">
+						</ul>
+						<ul class="nav h-100" style="">
+
+							<li class="h-100">
+								<a class="quick-btn default waves-effect waves-light btn-search-nav" role="button">
+									<i class="material-icons md-15">search</i>
+								</a>
+							</li>
+
+							<li class="dropdown h-100">
+								<a role="button" data-toggle="dropdown" title="Pemberitahuan" class="quick-btn waves-effect waves-light">
 									<i class="material-icons md-15">notifications_none</i>
 									<span class="rounded-circle quick-icon">8</span>
 								</a>
-								<div class="dropdown-menu dropdown-menu-right  mt-1">
+								<div class="dropdown-menu dropdown-menu-right">
 									<div class="text-center font-weight-bold">Pemberitahuan</div>
 									<div class="dropdown-divider"></div>
-
+									<div class="nav nav-tabs">
+										<div class="w-50"><a data-toggle="tab" href="#notif">Notif</a></div>
+										<div class="w-50"><a data-toggle="tab" href="#massage">mail</a></div>
+									</div>
+									<div class="tab-content">
+										<div class="tab-pane active" id="notif">halo it is notif</div>
+										<div class="tab-pane" id="massage">massage</div>
+									</div>
 
 
 								</div>
 
 							</li>
 
+<li class="h-100">
+								<a class="quick-btn default waves-effect waves-light" role="button">
+									<i class="material-icons md-20">list</i>
+								</a>
+							</li>
+<!--
 							<li>
 								<a role="button" data-toggle="dropdown" class="d-flex align-items-center border-0 bg-none m-0 " href="">
 									<i class="fa fa-user-circle-o fa-2x lighten-color1"></i>
@@ -147,6 +201,7 @@
 
 								</div>
 							</li>
+-->
 						</ul>
 					</div>
 				</div>
@@ -157,45 +212,45 @@
 	<!--        side menu -------------------------------------------------------------->
 	<aside class="side-menu shadow-side">
 
-		<section class="menu-list costum-scroll" >
+		<section class="menu-list costum-scroll">
 			<ul class="list-unstyled" id="accordion">
 				<li>
 					<a class="waves-effect waves-light" href="#">
-						<i class="material-icons md-12">dashboard</i> Dashboard
+						<i class="material-icons">laptop</i> Dashboard
 					</a>
 				</li>
 
 				<li>
 					<a class="btn-collapse waves-effect waves-light" href="#pesanan-collapse" data-parent="#accordion">
-						<i class="material-icons md-12">shop</i> Pesanan
-						<span class="badge badge-notif">Baru</span>
+						<i class="material-icons">local_shipping</i> Pesanan
+						<span class="badge teal ml-2">Baru</span>
 						<span class="material-icons menu-down">keyboard_arrow_right</span>
 					</a>
 					<div id="pesanan-collapse" class="collapse">
-						<ul class="list-unstyled shadow-ul">
-							<li>
-								<a href="#">
-									<i class="fa fa-fw fa-square"></i>Semua Pesanan
-									<span class="badge-pill badge-notif2 bg-red500">2</span>
+						<ul class="list-unstyled">
+							<li class="">
+								<a href="#" class="waves-effect waves-yellow">
+									Semua Pesanan
+									<span class="badge badge-pill danger right mt-1">12</span>
 								</a>
 							</li>
 							<li>
-								<a href="#">
-									<i class="fa fa-fw fa-square"></i>Pesanan Sukses</a>
+								<a href="#" class="waves-effect waves-yellow">
+									Pesanan Sukses</a>
 							</li>
 							<li>
-								<a href="#">
-									<i class="fa fa-fw fa-square"></i>Pesanan batal</a>
+								<a href="#" class="waves-effect waves-yellow">
+									Pesanan batal</a>
 							</li>
 							<li>
-								<a href="#">
-									<i class="fa fa-fw fa-square"></i>belum bayar
-									<span class="badge-pill badge-notif2 bg-red500">4</span></a>
+								<a href="#" class="waves-effect waves-yellow">
+									belum bayar
+									<span class="badge badge-pill danger right mt-1">4</span></a>
 							</li>
 							<li>
-								<a href="#">
-									<i class="fa fa-fw fa-square"></i>belum proses
-									<span class="badge-pill badge-notif2 bg-red500">1</span></a>
+								<a href="#" class="waves-effect waves-yellow">
+									belum proses
+									<span class="badge badge-pill danger right mt-1">1</span></a>
 							</li>
 						</ul>
 					</div>
@@ -204,96 +259,95 @@
 
 				<li>
 					<a class="btn-collapse waves-effect waves-light" href="#produk-collapse" data-parent="#accordion">
-						<i class="fa fa-fw fa-shopping-basket"></i> Produk
+						<i class="material-icons">shopping_basket</i> Produk
 						<span class="material-icons menu-down">keyboard_arrow_right</span>
 					</a>
 					<div id="produk-collapse" class="collapse">
-						<ul class="list-unstyled shadow-ul">
+						<ul class="list-unstyled">
 							<li>
-								<a href="#">
-									<i class="fa fa-fw fa-square"></i>Semua Produk</a>
+								<a href="#" class="waves-effect waves-yellow">
+									Semua Produk</a>
 							</li>
 							<li>
-								<a href="#">
-									<i class="fa fa-fw fa-square"></i>Persediaan habis</a>
+								<a href="#" class="waves-effect waves-yellow">
+									Persediaan habis</a>
 							</li>
 						</ul>
 					</div>
 				</li>
 
 				<li>
-					<a href="#">
-						<i class="fa fa-fw fa-money"></i> Pengeluaran
+					<a href="#" class="waves-effect waves-light">
+						<i class="material-icons">attach_money</i> Pengeluaran
 					</a>
 				</li>
 
 				<li>
-					<a href="#">
-						<i class="fa fa-fw fa-users"></i> Pelanggan
+					<a href="#" class="waves-effect waves-light">
+						<i class="material-icons">supervisor_account</i> Pelanggan
 					</a>
 				</li>
-
 				<li>
 					<a class="btn-collapse waves-effect waves-light" href="#laporan-collapse" data-parent="#accordion">
-						<i class="fa fa-fw fa-bar-chart-o"></i> Laporan
+						<i class="material-icons">show_chart</i> Laporan
+						<span class="badge teal ml-2">Baru</span>
 						<span class="material-icons menu-down">keyboard_arrow_right</span>
 					</a>
 					<div id="laporan-collapse" class="collapse">
-						<ul class="list-unstyled shadow-ul">
+						<ul class="list-unstyled">
 							<li>
-								<a href="#">
-									<i class="fa fa-fw fa-square"></i>Pesanan</a>
+								<a href="#" class="waves-effect waves-yellow">
+									Pesanan</a>
 							</li>
 							<li>
-								<a href="#">
-									<i class="fa fa-fw fa-square"></i>Produk terjual</a>
+								<a href="#" class="waves-effect waves-yellow">
+									Produk terjual<span class="badge badge-pill danger right mt-1">6</span></a>
 							</li>
 							<li>
-								<a href="#">
-									<i class="fa fa-fw fa-square"></i>Keuntungan</a>
+								<a href="#" class="waves-effect waves-yellow">
+									Keuntungan</a>
 							</li>
 							<li>
-								<a href="#">
-									<i class="fa fa-fw fa-square"></i>Pelanggan</a>
+								<a href="#" class="waves-effect waves-yellow">
+									Pelanggan</a>
 							</li>
 						</ul>
 					</div>
 				</li>
-
 				<li>
 					<a class="waves-effect waves-light" href="#">
-						<i class="fa fa-fw fa-clone"></i> Ekstensi
+						<i class="material-icons">extension</i> Ekstensi
 					</a>
 				</li>
 
 				<li>
 					<a class="waves-effect waves-light" href="#">
-						<i class="fa fa-fw fa-book"></i> Riwayat
+						<i class="material-icons">history</i> Riwayat
 					</a>
 				</li>
 
 				<li>
 					<a class="btn-collapse waves-effect waves-light" href="#pengaturan-collapse" data-parent="#accordion">
-						<i class="fa fa-fw fa-cogs"></i> Pengaturan
+						<i class="material-icons">settings</i> Pengaturan
 						<span class="material-icons menu-down">keyboard_arrow_right</span>
 					</a>
 					<div id="pengaturan-collapse" class="collapse">
-						<ul class="list-unstyled shadow-ul">
+						<ul class="list-unstyled">
 							<li>
-								<a href="#">
-									<i class="fa fa-fw fa-square"></i>Profil toko</a>
+								<a href="#" class="waves-effect waves-yellow">
+									Profil toko</a>
 							</li>
 							<li>
-								<a href="#">
-									<i class="fa fa-fw fa-square"></i>Data penyuplai</a>
+								<a href="#" class="waves-effect waves-yellow">
+									Data penyuplai</a>
 							</li>
 							<li>
-								<a href="#">
-									<i class="fa fa-fw fa-square"></i>akun pengelola</a>
+								<a href="#" class="waves-effect waves-yellow">
+									akun pengelola</a>
 							</li>
 							<li>
-								<a href="#">
-									<i class="fa fa-fw fa-square"></i>dashboard panel</a>
+								<a href="#" class="waves-effect waves-yellow">
+									dashboard panel</a>
 							</li>
 						</ul>
 					</div>
@@ -315,8 +369,8 @@
    </div>
    -->
 			<div class="col-12 col-sm-6 col-lg-3">
-				<a class="sub-item-content d-flex align-items-center" href="">
-					<i class="fa fa-truck"></i>
+				<a class="sub-item-content bg4 d-flex align-items-center" href="">
+					<i class="material-icons">local_shipping</i>
 					<div class="w-100 p-2 text-center">
 						<h5 class="text-white" style="font-size: 1em; font-weight: 400">pesanan Hari ini</h5>
 						<h1 class="text-white" style="font-weight: 500">104</h1>
@@ -324,8 +378,8 @@
 				</a>
 			</div>
 			<div class="col-12 col-sm-6 col-lg-3 hidden-xs-down click-toggle">
-				<a class="sub-item-content d-flex align-items-center" href="">
-					<i class="fa fa-cart-arrow-down"></i>
+				<a class="sub-item-content bg4 d-flex align-items-center" href="">
+					<i class="material-icons">shopping_cart</i>
 					<div class="w-100 p-2 text-center">
 						<h5 class="text-white" style="font-size: 1em; font-weight: 400">Terjual Hari ini</h5>
 						<h1 class="text-white" style="font-weight: 500">39</h1>
@@ -333,8 +387,8 @@
 				</a>
 			</div>
 			<div class="col-12 col-sm-6 col-lg-3 hidden-xs-down click-toggle">
-				<a class="sub-item-content d-flex align-items-center" href="">
-					<i class="fa fa-user"></i>
+				<a class="sub-item-content bg4 d-flex align-items-center" href="">
+					<i class="material-icons">group_add</i>
 					<div class="w-100 p-2 text-center">
 						<h5 class="text-white" style="font-size: 1em; font-weight: 400">Costumer baru</h5>
 						<h1 class="text-white" style="font-weight: 500">2</h1>
@@ -342,8 +396,8 @@
 				</a>
 			</div>
 			<div class="col-12 col-sm-6 col-lg-3 hidden-xs-down click-toggle">
-				<a class="sub-item-content d-flex align-items-center" href="">
-					<i class="fa fa-tablet"></i>
+				<a class="sub-item-content bg4 d-flex align-items-center" href="">
+					<i class="material-icons">tablet_android</i>
 					<div class="w-100 p-2 text-center">
 						<h5 class="text-white" style="font-size: 1em; font-weight: 400">Halaman dilihat</h5>
 						<h1 class="text-white" style="font-weight: 500">576</h1>
@@ -365,18 +419,18 @@
 						<div class="item-btn d-flex ">
 							<div class="item-icon d-inline">
 								<a role="button" class="d-flex justify-content-center align-items-center">
-									<i class="fa fa-print" title="Print dokumen ini"></i>
+									<i class="material-icons md-12" title="Print dokumen ini">print</i>
 								</a>
 							</div>
 							<div class="dropdown item-icon d-inline">
 								<a role="button" class="d-flex justify-content-center align-items-center" data-toggle="dropdown">
-									<i class="fa fa-download" title="Download berkas"></i>
+									<i class="material-icons md-12" title="Download berkas">file_download</i>
 
 								</a>
 								<div class="dropdown-menu dropdown-menu-right">
-									<a class="dropdown-item" href="#"><i class="fa fa-file-image-o"></i>
+									<a class="dropdown-item" href="#"><i class="material-icons md-1">photo</i>
                                     Save image</a>
-									<a class="dropdown-item" href="#"><i class="fa fa-file-pdf-o"></i>
+									<a class="dropdown-item" href="#"><i class="material-icons md-1" title="Download berkas">picture_as_pdf</i>
                                     Save as PDF</a>
 								</div>
 							</div>
@@ -399,18 +453,18 @@
 						<div class="item-btn d-flex ">
 							<div class="item-icon d-inline">
 								<a role="button" class="d-flex justify-content-center align-items-center">
-									<i class="fa fa-print" title="Print dokumen ini"></i>
+									<i class="material-icons md-12" title="Print dokumen ini">print</i>
 								</a>
 							</div>
 							<div class="dropdown item-icon d-inline">
 								<a role="button" class="d-flex justify-content-center align-items-center" data-toggle="dropdown">
-									<i class="fa fa-download" title="Download berkas"></i>
+									<i class="material-icons md-12" title="Download berkas">file_download</i>
 
 								</a>
 								<div class="dropdown-menu dropdown-menu-right">
-									<a class="dropdown-item" href="#"><i class="fa fa-file-image-o"></i>
+									<a class="dropdown-item" href="#"><i class="material-icons md-1">photo</i>
                                     Save image</a>
-									<a class="dropdown-item" href="#"><i class="fa fa-file-pdf-o"></i>
+									<a class="dropdown-item" href="#"><i class="material-icons md-1" title="Download berkas">picture_as_pdf</i>
                                     Save as PDF</a>
 								</div>
 							</div>
@@ -432,18 +486,18 @@
 						<div class="item-btn d-flex ">
 							<div class="item-icon d-inline">
 								<a role="button" class="d-flex justify-content-center align-items-center">
-									<i class="fa fa-print" title="Print dokumen ini"></i>
+									<i class="material-icons md-12" title="Print dokumen ini">print</i>
 								</a>
 							</div>
 							<div class="dropdown item-icon d-inline">
 								<a role="button" class="d-flex justify-content-center align-items-center" data-toggle="dropdown">
-									<i class="fa fa-download" title="Download berkas"></i>
+									<i class="material-icons md-12" title="Download berkas">file_download</i>
 
 								</a>
 								<div class="dropdown-menu dropdown-menu-right">
-									<a class="dropdown-item" href="#"><i class="fa fa-file-image-o"></i>
+									<a class="dropdown-item" href="#"><i class="material-icons md-1">photo</i>
                                     Save image</a>
-									<a class="dropdown-item" href="#"><i class="fa fa-file-pdf-o"></i>
+									<a class="dropdown-item" href="#"><i class="material-icons md-1" title="Download berkas">picture_as_pdf</i>
                                     Save as PDF</a>
 								</div>
 							</div>
@@ -465,18 +519,18 @@
 						<div class="item-btn d-flex ">
 							<div class="item-icon d-inline">
 								<a role="button" class="d-flex justify-content-center align-items-center">
-									<i class="fa fa-print" title="Print dokumen ini"></i>
+									<i class="material-icons md-12" title="Print dokumen ini">print</i>
 								</a>
 							</div>
 							<div class="dropdown item-icon d-inline">
 								<a role="button" class="d-flex justify-content-center align-items-center" data-toggle="dropdown">
-									<i class="fa fa-download" title="Download berkas"></i>
+									<i class="material-icons md-12" title="Download berkas">file_download</i>
 
 								</a>
 								<div class="dropdown-menu dropdown-menu-right">
-									<a class="dropdown-item" href="#"><i class="fa fa-file-image-o"></i>
+									<a class="dropdown-item" href="#"><i class="material-icons md-1">photo</i>
                                     Save image</a>
-									<a class="dropdown-item" href="#"><i class="fa fa-file-pdf-o"></i>
+									<a class="dropdown-item" href="#"><i class="material-icons md-1" title="Download berkas">picture_as_pdf</i>
                                     Save as PDF</a>
 								</div>
 							</div>
@@ -498,18 +552,18 @@
 						<div class="item-btn d-flex ">
 							<div class="item-icon d-inline">
 								<a role="button" class="d-flex justify-content-center align-items-center">
-									<i class="fa fa-print" title="Print dokumen ini"></i>
+									<i class="material-icons md-12" title="Print dokumen ini">print</i>
 								</a>
 							</div>
 							<div class="dropdown item-icon d-inline">
 								<a role="button" class="d-flex justify-content-center align-items-center" data-toggle="dropdown">
-									<i class="fa fa-download" title="Download berkas"></i>
+									<i class="material-icons md-12" title="Download berkas">file_download</i>
 
 								</a>
 								<div class="dropdown-menu dropdown-menu-right">
-									<a class="dropdown-item" href="#"><i class="fa fa-file-image-o"></i>
+									<a class="dropdown-item" href="#"><i class="material-icons md-1">photo</i>
                                     Save image</a>
-									<a class="dropdown-item" href="#"><i class="fa fa-file-pdf-o"></i>
+									<a class="dropdown-item" href="#"><i class="material-icons md-1" title="Download berkas">picture_as_pdf</i>
                                     Save as PDF</a>
 								</div>
 							</div>
@@ -531,18 +585,18 @@
 						<div class="item-btn d-flex ">
 							<div class="item-icon d-inline">
 								<a role="button" class="d-flex justify-content-center align-items-center">
-									<i class="fa fa-print" title="Print dokumen ini"></i>
+									<i class="material-icons md-12" title="Print dokumen ini">print</i>
 								</a>
 							</div>
 							<div class="dropdown item-icon d-inline">
 								<a role="button" class="d-flex justify-content-center align-items-center" data-toggle="dropdown">
-									<i class="fa fa-download" title="Download berkas"></i>
+									<i class="material-icons md-12" title="Download berkas">file_download</i>
 
 								</a>
 								<div class="dropdown-menu dropdown-menu-right">
-									<a class="dropdown-item" href="#"><i class="fa fa-file-image-o"></i>
+									<a class="dropdown-item" href="#"><i class="material-icons md-1">photo</i>
                                     Save image</a>
-									<a class="dropdown-item" href="#"><i class="fa fa-file-pdf-o"></i>
+									<a class="dropdown-item" href="#"><i class="material-icons md-1" title="Download berkas">picture_as_pdf</i>
                                     Save as PDF</a>
 								</div>
 							</div>
@@ -613,18 +667,18 @@
 						<div class="item-btn d-flex ">
 							<div class="item-icon d-inline">
 								<a role="button" class="d-flex justify-content-center align-items-center">
-									<i class="fa fa-print" title="Print dokumen ini"></i>
+									<i class="material-icons md-12" title="Print dokumen ini">print</i>
 								</a>
 							</div>
 							<div class="dropdown item-icon d-inline">
 								<a role="button" class="d-flex justify-content-center align-items-center" data-toggle="dropdown">
-									<i class="fa fa-download" title="Download berkas"></i>
+									<i class="material-icons md-12" title="Download berkas">file_download</i>
 
 								</a>
 								<div class="dropdown-menu dropdown-menu-right">
-									<a class="dropdown-item" href="#"><i class="fa fa-file-image-o"></i>
+									<a class="dropdown-item" href="#"><i class="material-icons md-1">photo</i>
                                     Save image</a>
-									<a class="dropdown-item" href="#"><i class="fa fa-file-pdf-o"></i>
+									<a class="dropdown-item" href="#"><i class="material-icons md-1" title="Download berkas">picture_as_pdf</i>
                                     Save as PDF</a>
 								</div>
 							</div>

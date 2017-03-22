@@ -2,7 +2,6 @@ $(document).ready(function () {
 
 	//	inisialisasi variabel-----------------------------------------------
 	var accord = $('#accordion').find('li .btn-collapse'),
-		w = $(window).width(),
 		cartJual = document.getElementById('cart-penjualan'),
 		cartIncome = document.getElementById('cart-pengeluaran-pemasukan'),
 		cartRekap = document.getElementById('cart-rekap'),
@@ -11,6 +10,7 @@ $(document).ready(function () {
 		//		fungsi handler-----------------------------------------------
 		func = {
 			resize: function () {
+				w = $(window).width();
 				if (w < 768) {
 					$('.outside-menu').addClass('animate-outside-menu');
 					$('.side-menu').addClass('animate-side-menu');
@@ -24,7 +24,7 @@ $(document).ready(function () {
 			default: function (e) {
 				e.preventDefault();
 			},
-			
+
 			stop: function (e) {
 				e.stopPropagation();
 			},
@@ -43,22 +43,37 @@ $(document).ready(function () {
 			}
 		};
 	//	Aksi Action---------------------------------------------
+
+
+	$('.nav-tabs').on('shown.bs.tab', 'a', function (e) {
+		console.log(e.relatedTarget);
+		if (e.relatedTarget) {
+			$(e.relatedTarget).removeClass('active');
+		}
+	});
+
+
 	$('.btn-search-nav').click(function (e) {
 		$('.search-nav').toggleClass('show');
 		e.stopPropagation();
 	});
-	
+
 	$('.btn-apps-nav').click(function (e) {
 		$('.apps-nav').fadeIn(275);
 		e.stopPropagation();
 	});
-	
-	$('.search-nav').on('click', func.stop);
-	
+
+	$('.search-nav, .apps-nav, .side-menu').on('click', func.stop);
+
 	$(document).click(function () {
+		var w = $(window).width();
 		$(".search-nav").removeClass('show');
 		$('.apps-nav').fadeOut(225);
-		
+		if (w < 768) {
+			$('.outside-menu').addClass('animate-outside-menu');
+			$('.side-menu').addClass('animate-side-menu');
+
+		}
 	});
 	//	prevent default a
 	$('.default').on('click', func.default);
@@ -94,6 +109,10 @@ $(document).ready(function () {
 		$(this).hide();
 	});
 
+	$('#toggle_add_fast').click(function () {
+		$('#add_fast').toggleClass('show');
+	});
+
 	//smooth scroll top
 	$('.scroll-top').hide();
 
@@ -114,10 +133,10 @@ $(document).ready(function () {
 	});
 
 	//burger menu side toggle
-	$('#nav-icon').click(function () {
-		$('.dim-background').toggleClass('collapse');
+	$('.nav-icon').click(function (e) {
 		$('.outside-menu').toggleClass('animate-outside-menu');
 		$('.side-menu').toggleClass('animate-side-menu');
+		e.stopPropagation();
 	});
 
 	//	chart js

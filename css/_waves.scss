@@ -44,7 +44,8 @@
     background-color: rgba(244, 67, 54, .70);
   }
   &.waves-yellow .waves-ripple {
-    background-color: rgba(255, 235, 59, .70);
+	  background-color: rgba(#FFD600, 0.7)
+//    background-color: rgba(255, 235, 59, .70);
   }
   &.waves-orange .waves-ripple {
     background-color: rgba(255, 152, 0, .70);

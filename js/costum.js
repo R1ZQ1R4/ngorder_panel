@@ -45,14 +45,14 @@ $(document).ready(function () {
 	//	Aksi Action---------------------------------------------
 
 
-	$('.nav-tabs').on('shown.bs.tab', 'a', function (e) {
-		console.log(e.relatedTarget);
-		if (e.relatedTarget) {
-			$(e.relatedTarget).removeClass('active');
+	$('.btn-chat').click(function () {
+		w = $(window).width();
+		$('.side-chat').toggleClass('show');
+		if (w < 768) {
+			$('.outside-menu').addClass('animate-outside-menu');
+			$('.side-menu').addClass('animate-side-menu');
 		}
 	});
-
-
 	$('.btn-search-nav').click(function (e) {
 		$('.search-nav').toggleClass('show');
 		e.stopPropagation();
@@ -67,12 +67,13 @@ $(document).ready(function () {
 		$('.apps-nav').fadeOut(225);
 	});
 
-	$('.search-nav, .apps-nav, .side-menu').on('click', func.stop);
+	$('.search-nav, .side-menu, .side-chat, .btn-chat').on('click', func.stop);
 
 	$(document).click(function () {
 		var w = $(window).width();
 		$(".search-nav").removeClass('show');
 		$('.apps-nav').fadeOut(225);
+		$('.side-chat').removeClass('show');
 		if (w < 768) {
 			$('.outside-menu').addClass('animate-outside-menu');
 			$('.side-menu').addClass('animate-side-menu');
@@ -103,12 +104,8 @@ $(document).ready(function () {
 
 	//4 sekawan toggle
 	$('#toggle-show').click(function () {
-		$('.click-toggle').toggleClass("hidden-xs-down");
-		$(this).hide();
-	});
-
-	$('#toggle_add_fast').click(function () {
-		$('#add_fast').toggleClass('show');
+		$('.click-toggle').toggleClass("hidden-xs-down animated fadeInUp");
+		$(this).toggleClass('hide');
 	});
 
 	//smooth scroll top
@@ -132,6 +129,10 @@ $(document).ready(function () {
 
 	//burger menu side toggle
 	$('.nav-icon').click(function (e) {
+		w = $(window).width();
+		if (w < 768) {
+			$('.side-chat').removeClass('show');
+		}
 		$('.outside-menu').toggleClass('animate-outside-menu');
 		$('.side-menu').toggleClass('animate-side-menu');
 		e.stopPropagation();

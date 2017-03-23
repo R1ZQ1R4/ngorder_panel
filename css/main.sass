@@ -110,7 +110,8 @@ $text-l-icon: rgba(255, 255, 255, 0.3)
 				background: white
 				color: $text-d-4
 				+vendor(transition, all 225ms ease-out)
-
+				&:hover
+					color: $lightBlue-700
 		input[type="text"]
 			padding: 0 1em
 			+vendor(transition, all 225ms ease-out)
@@ -122,10 +123,7 @@ $text-l-icon: rgba(255, 255, 255, 0.3)
 			color: $text-d-1
 			&:focus
 				outline: none !important
-				&~ a
-					color: $text-d-icon
-					&:hover
-						color: $lightBlue-700
+						
 	
 	
 .apps-nav
@@ -232,16 +230,26 @@ $text-l-icon: rgba(255, 255, 255, 0.3)
 		position: absolute
 		+vendor (transform-origin, 0 0)
 		+vendor (box-shadow, -1.5px -1.5px 3px 0px rgba(0, 0, 0, 0.15))
+	.dropdown-item-title
+		font-size: 1.025em
+		text-transform: uppercase
+		color: $text-d-2
+		padding: 0.7em 1em 1em 1em 
+		border-bottom: 1px solid $text-d-5
 	.dropdown-item
+		color: $text-d-1
 		text-transform: capitalize
-		font-size: 0.9em
-		padding: 0.8em 1em !important
+		font-size: 1em
+		padding: 1em 1em !important
+		+vendor(transition, all 275ms ease-out)
 		i
-			text-align: center
-			color: rgba(0, 0, 0, 0.4)
-			width: 1.2em
-			margin-right: 0.5em
-
+			float: right
+			color: $text-d-2
+			width: 1em
+		&:hover
+			color: $lightBlue-700
+			i
+				color: $lightBlue-700
 
 #toggle-show
 	font-weight: 500
@@ -387,22 +395,52 @@ body
 		margin-top: 7px
 
 .user-profile
+	margin-bottom: 0.425em
 	background: url(../img/bg_user.jpg) no-repeat center
 	background-color: white
 	background-size: cover
 	width: 100%
 	height: 150px
 .user-info
-	height: 100px
+	height: 90px
 	.user-thumb
 		width: 90px
-		padding: 0.825em
+		padding: 1.125em 0.825em 0.525em 0.825em
 		img
 			width: 100%
 			width: 100%
 			background: white
+	.user-name
+		max-width: 150px
+		padding: 1.125em 0.825em 0.525em 0
+		span
+			overflow: hidden
+			text-overflow: ellipsis
+			max-width: 120px
+			font-size: 0.9rem
+			display: block
+			margin: 0
+			color: rgba(255, 255, 255, 0.92)
+			&:last-child
+				font-size: 0.825em
 .user-menu
-	height: 50px
+	height: 60px
+	.user-btn
+		display: flex
+		align-items: center
+		justify-content: center
+		border-radius: 2px
+		width: 44px
+		height: 44px
+		color: $text-l-2 !important
+		+vendor(transition, all 300ms ease-out)
+		i
+			font-size: 1.1rem
+		&:hover
+			background: $text-d-icon
+			color: $text-l-1 !important
+			
+		
 	
 
 .shadow-side
@@ -492,7 +530,7 @@ body
 		
 .item-content
 	border-radius: 2px
-	border-top: 3px solid $lightBlue-800
+	border-top: 3px solid $lightBlue-700
 	width: 100%
 	background: white
 	+vendor (box-shadow, 0 1px 4px 1px rgba(0, 0, 0, 0.2))
@@ -512,16 +550,19 @@ body
 	
 .item-btn
 	margin-right: 0.4em 
-	
 	.item-icon
 		>a
 			width: 40px
 			height: 54px
 			i
-				width: 22px
-				height: 22px
+				width: 25px
+				height: 25px
 				vertical-align: middle
-				color: rgba(89, 72, 255, 0.85)
+				color: rgba(0, 0, 0, 0.16)
+				+vendor(transition, all 225ms ease-out)
+			&:hover, &:active, &:focus
+				i
+					color: $lightBlue-700
 
 
 .badge
@@ -533,14 +574,14 @@ body
 	min-width: 24px
 	text-transform: capitalize
 	font-size: 0.625rem
-	padding: 4px 6px 3px 5px !important
+	padding: 4px 8px 3px 7px !important
 	&.right
 		float: right
 	&.danger
 		background-color: $red-500
 	&.teal
 		background-color: $teal-500
-	
+
 footer
 	border-top: 2px solid $color7
 	font-weight: 700

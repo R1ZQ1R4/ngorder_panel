@@ -33,7 +33,6 @@
 	.mb-1em>[class^=" col-"] {
 		margin-bottom: 1em;
 	}
-
 </style>
 
 <body>
@@ -57,7 +56,7 @@
 		</div>
 	</section>
 
-	<!--apps-->m
+	<!--apps-->
 	<section class="apps-nav">
 		<div class="fluid-container h-100">
 			<div class="d-flex justify-content-between align-items-center h-100">
@@ -76,7 +75,7 @@
 
 					<li class="dropdown h-100">
 						<a id="toggle_add_fast" role="button" data-toggle="dropdown" title="Tambah cepat" class="logo-btn waves-effect waves-light ">
-							<i class="material-icons md-15">add</i>
+							<i class="material-icons md-15">add_circle_outline</i>
 						</a>
 					</li>
 
@@ -144,18 +143,17 @@
 									<i class="material-icons md-15">add_circle_outline</i>
 								</a>
 								<div class="dropdown-menu dropdown-sm-center" id="add-fast">
-									<div class="text-center font-weight-bold">Tambah Cepat</div>
-									<div class="dropdown-divider"></div>
+									<div class="dropdown-item-title">Tambah Cepat</div>
 									<a class="dropdown-item" href=""><i class="material-icons md-1">add_shopping_cart</i>
-                                    Tambah pesanan</a>
+									                                     pesanan</a>
 									<a class="dropdown-item" href=""><i class="material-icons md-1">library_add</i>
-                                    Tambah produk</a>
+                                     produk</a>
 									<a class="dropdown-item" href=""><i class="material-icons md-1">money_off</i>
-                                    Tambah pengeluaran</a>
+                                     pengeluaran</a>
 									<a class="dropdown-item" href=""><i class="material-icons md-1">person_add</i>
-                                    Tambah pelanggan</a>
+                                     pelanggan</a>
 									<a class="dropdown-item" href=""><i class="material-icons md-1">wifi</i>
-                                    Tambah penyuplai</a>
+                                     penyuplai</a>
 								</div>
 							</li>
 						</ul>
@@ -224,28 +222,35 @@
 
 	<!--        side menu -------------------------------------------------------------->
 	<aside class="side-menu shadow-side">
-
-		<section class="menu-list costum-scroll">
-			<ul class="list-unstyled" id="accordion">
-			<div class="user-profile d-flex flex-wrap">
-				<div class="user-info w-100 d-flex align-items-center">
-				<div class="user-thumb">	
-					<img src="img/man.png" class="rounded-circle" alt="picture"/>
+		<div class="user-profile d-flex flex-wrap">
+			<div class="user-info w-100 d-flex align-items-center">
+				<div class="user-thumb">
+					<img src="img/man.png" class="rounded-circle" alt="picture" />
 				</div>
 				<div class="user-name">
-					<h5>Username</h5>
-					<h5>Email</h5>
-				</div>		
+					<span>Admin</span>
+					<span>owner09@ngorder.id</span>
 				</div>
-				<div class="user-menu w-100 d-flex justify-content-around">
-					<div class="user-btn">a</div>
-					<div class="user-btn">a</div>
-					<div class="user-btn">a</div>
-					<div class="user-btn">a</div>
-				</div>
-				
-				
 			</div>
+			<div class="user-menu w-100 d-flex justify-content-around align-items-center">
+				<a role="button" class="user-btn">
+					<i class="material-icons">person_outline</i>
+				</a>
+				<a role="button" class="user-btn">
+					<i class="material-icons">mail_outline</i>
+				</a>
+				<a role="button" class="user-btn">
+					<i class="material-icons">help_outline</i>
+				</a>
+				<a role="button" class="user-btn">
+					<i class="material-icons">exit_to_app</i>
+				</a>
+			</div>
+
+
+		</div>
+		<section class="menu-list">
+			<ul class="list-unstyled" id="accordion">
 				<li>
 					<a class="waves-effect waves-light" href="#">
 						<i class="material-icons">laptop</i> Dashboard
@@ -255,7 +260,7 @@
 				<li>
 					<a class="btn-collapse waves-effect waves-light" href="#pesanan-collapse" data-parent="#accordion">
 						<i class="material-icons">local_shipping</i> Pesanan
-						<span class="badge teal ml-2">Baru</span>
+						<span class="badge teal badge-pill ml-2">Baru</span>
 						<span class="material-icons menu-down">keyboard_arrow_right</span>
 					</a>
 					<div id="pesanan-collapse" class="collapse">
@@ -322,7 +327,7 @@
 				<li>
 					<a class="btn-collapse waves-effect waves-light" href="#laporan-collapse" data-parent="#accordion">
 						<i class="material-icons">show_chart</i> Laporan
-						<span class="badge teal ml-2">Baru</span>
+						<span class="badge teal badge-pill ml-2">Baru</span>
 						<span class="material-icons menu-down">keyboard_arrow_right</span>
 					</a>
 					<div id="laporan-collapse" class="collapse">
@@ -401,7 +406,7 @@
    </div>
    -->
 			<div class="col-12 col-sm-6 col-lg-3">
-				<a class="sub-item-content bg2 d-flex align-items-center" href="">
+				<a class="sub-item-content bg1 d-flex align-items-center" href="">
 					<i class="material-icons">local_shipping</i>
 					<div class="w-100 p-2 text-center">
 						<h5 class="text-white" style="font-size: 1em; font-weight: 400">pesanan Hari ini</h5>
@@ -410,7 +415,7 @@
 				</a>
 			</div>
 			<div class="col-12 col-sm-6 col-lg-3 hidden-xs-down click-toggle">
-				<a class="sub-item-content bg2 d-flex align-items-center" href="">
+				<a class="sub-item-content bg1 d-flex align-items-center" href="">
 					<i class="material-icons">shopping_cart</i>
 					<div class="w-100 p-2 text-center">
 						<h5 class="text-white" style="font-size: 1em; font-weight: 400">Terjual Hari ini</h5>
@@ -419,7 +424,7 @@
 				</a>
 			</div>
 			<div class="col-12 col-sm-6 col-lg-3 hidden-xs-down click-toggle">
-				<a class="sub-item-content bg2 d-flex align-items-center" href="">
+				<a class="sub-item-content bg1 d-flex align-items-center" href="">
 					<i class="material-icons">group_add</i>
 					<div class="w-100 p-2 text-center">
 						<h5 class="text-white" style="font-size: 1em; font-weight: 400">Costumer baru</h5>
@@ -428,7 +433,7 @@
 				</a>
 			</div>
 			<div class="col-12 col-sm-6 col-lg-3 hidden-xs-down click-toggle">
-				<a class="sub-item-content bg2 d-flex align-items-center" href="">
+				<a class="sub-item-content bg1 d-flex align-items-center" href="">
 					<i class="material-icons">tablet_android</i>
 					<div class="w-100 p-2 text-center">
 						<h5 class="text-white" style="font-size: 1em; font-weight: 400">Halaman dilihat</h5>
@@ -461,9 +466,9 @@
 								</a>
 								<div class="dropdown-menu dropdown-menu-right">
 									<a class="dropdown-item" href="#"><i class="material-icons md-1">photo</i>
-                                    Save image</a>
+                                    simpan gambar</a>
 									<a class="dropdown-item" href="#"><i class="material-icons md-1" title="Download berkas">picture_as_pdf</i>
-                                    Save as PDF</a>
+                                    simpan as PDF</a>
 								</div>
 							</div>
 
@@ -495,9 +500,9 @@
 								</a>
 								<div class="dropdown-menu dropdown-menu-right">
 									<a class="dropdown-item" href="#"><i class="material-icons md-1">photo</i>
-                                    Save image</a>
+                                    simpan gambar</a>
 									<a class="dropdown-item" href="#"><i class="material-icons md-1" title="Download berkas">picture_as_pdf</i>
-                                    Save as PDF</a>
+                                    simpan as PDF</a>
 								</div>
 							</div>
 						</div>
@@ -528,9 +533,9 @@
 								</a>
 								<div class="dropdown-menu dropdown-menu-right">
 									<a class="dropdown-item" href="#"><i class="material-icons md-1">photo</i>
-                                    Save image</a>
+                                    simpan gambar</a>
 									<a class="dropdown-item" href="#"><i class="material-icons md-1" title="Download berkas">picture_as_pdf</i>
-                                    Save as PDF</a>
+                                    simpan as PDF</a>
 								</div>
 							</div>
 						</div>
@@ -561,9 +566,9 @@
 								</a>
 								<div class="dropdown-menu dropdown-menu-right">
 									<a class="dropdown-item" href="#"><i class="material-icons md-1">photo</i>
-                                    Save image</a>
+                                    simpan gambar</a>
 									<a class="dropdown-item" href="#"><i class="material-icons md-1" title="Download berkas">picture_as_pdf</i>
-                                    Save as PDF</a>
+                                    simpan as PDF</a>
 								</div>
 							</div>
 						</div>
@@ -594,9 +599,9 @@
 								</a>
 								<div class="dropdown-menu dropdown-menu-right">
 									<a class="dropdown-item" href="#"><i class="material-icons md-1">photo</i>
-                                    Save image</a>
+                                    simpan gambar</a>
 									<a class="dropdown-item" href="#"><i class="material-icons md-1" title="Download berkas">picture_as_pdf</i>
-                                    Save as PDF</a>
+                                    simpan as PDF</a>
 								</div>
 							</div>
 						</div>
@@ -627,9 +632,9 @@
 								</a>
 								<div class="dropdown-menu dropdown-menu-right">
 									<a class="dropdown-item" href="#"><i class="material-icons md-1">photo</i>
-                                    Save image</a>
+                                    simpan gambar</a>
 									<a class="dropdown-item" href="#"><i class="material-icons md-1" title="Download berkas">picture_as_pdf</i>
-                                    Save as PDF</a>
+                                    simpan as PDF</a>
 								</div>
 							</div>
 						</div>
@@ -709,9 +714,9 @@
 								</a>
 								<div class="dropdown-menu dropdown-menu-right">
 									<a class="dropdown-item" href="#"><i class="material-icons md-1">photo</i>
-                                    Save image</a>
+                                    simpan gambar</a>
 									<a class="dropdown-item" href="#"><i class="material-icons md-1" title="Download berkas">picture_as_pdf</i>
-                                    Save as PDF</a>
+                                    simpan as PDF</a>
 								</div>
 							</div>
 						</div>
@@ -744,8 +749,6 @@
 	<script type="text/javascript" src="js/waves.js"></script>
 	<script src="js/costum.js" type="text/javascript"></script>
 	<script>
-
-
 	</script>
 </body>
 

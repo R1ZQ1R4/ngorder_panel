@@ -1,5 +1,6 @@
 <!DOCTYPE html>
 <html lang="en">
+
 <head>
 	<meta charset="utf-8">
 	<meta name="viewport" content="width=device-width, initial-scale=1, shrink-to-fit=no">
@@ -32,25 +33,37 @@
 	.mb-1em>[class^=" col-"] {
 		margin-bottom: 1em;
 	}
+
 </style>
 
 <body>
 	<!--search-->
 	<section class="search-nav">
 		<div class="fluid-container h-100">
+
 			<div class="search d-flex justify-content-center align-items-center h-100">
-				<input class="" type="text" placeholder="Search">
+				<a role="button" class="quick-btn waves-effect waves-light back-icon">
+					<i class="material-icons md-17">arrow_back</i>
+				</a>
+
+				<form class="mx-auto">
+					<input class="" type="text" placeholder="Search">
+					<a role="button">
+						<i class="material-icons">search</i>
+					</a>
+				</form>
+
 			</div>
 		</div>
 	</section>
 
-	<!--apps-->
+	<!--apps-->m
 	<section class="apps-nav">
 		<div class="fluid-container h-100">
 			<div class="d-flex justify-content-between align-items-center h-100">
 				<div class="h-100">
-					<a role="button" class="logo-btn waves-effect waves-light nav-icon">
-						<i class="material-icons md-17">menu</i>
+					<a role="button" class="logo-btn waves-effect waves-light back-icon">
+						<i class="material-icons md-17">arrow_back</i>
 					</a>
 				</div>
 
@@ -60,7 +73,7 @@
 							<i class="material-icons md-15">search</i>
 						</a>
 					</li>
-					
+
 					<li class="dropdown h-100">
 						<a id="toggle_add_fast" role="button" data-toggle="dropdown" title="Tambah cepat" class="logo-btn waves-effect waves-light ">
 							<i class="material-icons md-15">add</i>
@@ -73,7 +86,7 @@
 							<i class="material-icons md-15">notifications_none</i>
 							<span class="rounded-circle quick-icon oppai">8</span>
 						</a>
-						<div class="dropdown-menu dropdown-menu-right oppai" >
+						<div class="dropdown-menu dropdown-menu-right oppai">
 							<div class="text-center font-weight-bold">Pemberitahuan</div>
 							<div class="dropdown-divider"></div>
 
@@ -99,8 +112,8 @@
 							</a>
 						</div>
 						<div class="ml-sm-2 h-100 hidden-xxs-down">
-						<a class="h-100 d-flex align-items-center" href="#">
-							<svg class="" id="Layer_1" xmlns="http://www.w3.org/2000/svg" viewBox="-197 351 403.2 99" height="30">
+							<a class="h-100 d-flex align-items-center" href="#">
+								<svg class="" id="Layer_1" xmlns="http://www.w3.org/2000/svg" viewBox="-197 351 403.2 99" height="30">
   <g id="XMLID_21_">
     <path id="XMLID_38_" class="st0" d="M-51.7 383.8v33.9c0 2.3-1.5 4.5-3.7 5.2-.7.3-1.4.4-2 .4-1.6 0-3.2-.8-4.3-2l-18.1-21.9v18.3c0 3.1-2.5 5.6-5.7 5.6-3.1 0-5.6-2.5-5.6-5.6v-33.9c0-2.4 1.5-4.5 3.7-5.3.7-.3 1.4-.4 2-.4 1.6 0 3.2.8 4.3 2l18.3 21.9v-18.2c0-3.2 2.5-5.7 5.6-5.7 3-.1 5.5 2.4 5.5 5.7z"/>
     <path id="XMLID_35_" class="st0" d="M-2.6 423.2c0 5.5-1.8 10.7-5.2 14.9-4 4.8-9.9 7.6-16 7.6h-1.4c-6.4-.5-12.4-4.2-16.1-9.9-.6-1-.9-1.9-.9-3 0-1.8 1-3.7 2.6-4.7 1-.7 2-1 3.1-1 1.8 0 3.6 1 4.6 2.6 1.7 2.7 4.5 4.5 7.4 4.6h.6c2.7 0 5.3-1.3 7.3-3.5 1.7-2.1 2.7-4.9 2.7-7.7v-2.6c-3 1.6-6.3 2.6-9.9 2.6-11.7 0-21.2-10.2-21.2-22.6 0-12.4 9.5-22.5 21.2-22.5 3.8 0 7.4 1.1 10.5 3 .9-1.7 2.8-3 4.9-3 3.1 0 5.6 2.5 5.6 5.6V423.2h.2zm-11.2-22.7c0-6.2-4.5-11.2-9.9-11.2-5.5 0-9.9 5-9.9 11.2 0 6.3 4.4 11.3 9.9 11.3 5.4.2 9.9-5 9.9-11.3z"/>
@@ -112,8 +125,8 @@
   </g>
   <path class="st1" d="M-110.6 374l-7.8-13.4c-1.8-3.3-5.1-5.4-8.8-5.4h-47.9c-3.7 0-7.1 2-8.9 5.3l-7.6 14.3c-.4 1.1-.6 2.1-.6 3.7v59.8c0 4.4 3.6 7.4 8 7.4h66.8c4.4 0 7.4-3.1 7.4-7.4v-59.7c-.1-.8-.1-3.6-.6-4.6zm-72.3-6.9h17.9l1.1-3.6h-17l.5-1.1c1.1-2 3.1-3.5 5.4-3.5h48c2.3 0 4.3 1.4 5.4 3.6l.5 1.1H-138l1.1 3.6h17.9l2 3.9h-67.9l2-4zm19.7 74.7v-35.5c0-6 6.1-11 12.2-11 6 0 12.2 4.9 12.2 11v35.5H-163.2z"/>
 </svg>
-						</a>
-			</div>
+							</a>
+						</div>
 						<div class="h-100 d-inline-flex hidden-sm-up">
 							<a role="button" class="default logo-btn waves-effect waves-light btn-search-nav" href="">
 								<i class="material-icons md-17">search</i>
@@ -124,9 +137,9 @@
 						</div>
 					</div>
 
-					<div class="hidden-xs-down decoration-none h-100 px-2 d-flex justify-content-between" style="width: calc(100% - 220px)">
+					<div class="hidden-xs-down decoration-none h-100 px-2 d-flex justify-content-between" style="width: calc(100% - 240px)">
 						<ul class="nav h-100" style="">
-						<li class="dropdown h-100">
+							<li class="dropdown h-100">
 								<a role="button" data-toggle="dropdown" title="Tambah cepat" class="quick-btn waves-effect waves-light ">
 									<i class="material-icons md-15">add_circle_outline</i>
 								</a>
@@ -176,12 +189,12 @@
 
 							</li>
 
-<li class="h-100">
+							<li class="h-100">
 								<a class="quick-btn default waves-effect waves-light" role="button">
 									<i class="material-icons md-20">list</i>
 								</a>
 							</li>
-<!--
+							<!--
 							<li>
 								<a role="button" data-toggle="dropdown" class="d-flex align-items-center border-0 bg-none m-0 " href="">
 									<i class="fa fa-user-circle-o fa-2x lighten-color1"></i>
@@ -214,6 +227,25 @@
 
 		<section class="menu-list costum-scroll">
 			<ul class="list-unstyled" id="accordion">
+			<div class="user-profile d-flex flex-wrap">
+				<div class="user-info w-100 d-flex align-items-center">
+				<div class="user-thumb">	
+					<img src="img/man.png" class="rounded-circle" alt="picture"/>
+				</div>
+				<div class="user-name">
+					<h5>Username</h5>
+					<h5>Email</h5>
+				</div>		
+				</div>
+				<div class="user-menu w-100 d-flex justify-content-around">
+					<div class="user-btn">a</div>
+					<div class="user-btn">a</div>
+					<div class="user-btn">a</div>
+					<div class="user-btn">a</div>
+				</div>
+				
+				
+			</div>
 				<li>
 					<a class="waves-effect waves-light" href="#">
 						<i class="material-icons">laptop</i> Dashboard
@@ -229,26 +261,26 @@
 					<div id="pesanan-collapse" class="collapse">
 						<ul class="list-unstyled">
 							<li class="">
-								<a href="#" class="waves-effect waves-yellow">
+								<a href="#" class="waves-effect ">
 									Semua Pesanan
 									<span class="badge badge-pill danger right mt-1">12</span>
 								</a>
 							</li>
 							<li>
-								<a href="#" class="waves-effect waves-yellow">
+								<a href="#" class="waves-effect ">
 									Pesanan Sukses</a>
 							</li>
 							<li>
-								<a href="#" class="waves-effect waves-yellow">
+								<a href="#" class="waves-effect ">
 									Pesanan batal</a>
 							</li>
 							<li>
-								<a href="#" class="waves-effect waves-yellow">
+								<a href="#" class="waves-effect ">
 									belum bayar
 									<span class="badge badge-pill danger right mt-1">4</span></a>
 							</li>
 							<li>
-								<a href="#" class="waves-effect waves-yellow">
+								<a href="#" class="waves-effect ">
 									belum proses
 									<span class="badge badge-pill danger right mt-1">1</span></a>
 							</li>
@@ -265,11 +297,11 @@
 					<div id="produk-collapse" class="collapse">
 						<ul class="list-unstyled">
 							<li>
-								<a href="#" class="waves-effect waves-yellow">
+								<a href="#" class="waves-effect ">
 									Semua Produk</a>
 							</li>
 							<li>
-								<a href="#" class="waves-effect waves-yellow">
+								<a href="#" class="waves-effect ">
 									Persediaan habis</a>
 							</li>
 						</ul>
@@ -296,19 +328,19 @@
 					<div id="laporan-collapse" class="collapse">
 						<ul class="list-unstyled">
 							<li>
-								<a href="#" class="waves-effect waves-yellow">
+								<a href="#" class="waves-effect ">
 									Pesanan</a>
 							</li>
 							<li>
-								<a href="#" class="waves-effect waves-yellow">
+								<a href="#" class="waves-effect ">
 									Produk terjual<span class="badge badge-pill danger right mt-1">6</span></a>
 							</li>
 							<li>
-								<a href="#" class="waves-effect waves-yellow">
+								<a href="#" class="waves-effect ">
 									Keuntungan</a>
 							</li>
 							<li>
-								<a href="#" class="waves-effect waves-yellow">
+								<a href="#" class="waves-effect ">
 									Pelanggan</a>
 							</li>
 						</ul>
@@ -334,19 +366,19 @@
 					<div id="pengaturan-collapse" class="collapse">
 						<ul class="list-unstyled">
 							<li>
-								<a href="#" class="waves-effect waves-yellow">
+								<a href="#" class="waves-effect ">
 									Profil toko</a>
 							</li>
 							<li>
-								<a href="#" class="waves-effect waves-yellow">
+								<a href="#" class="waves-effect ">
 									Data penyuplai</a>
 							</li>
 							<li>
-								<a href="#" class="waves-effect waves-yellow">
+								<a href="#" class="waves-effect ">
 									akun pengelola</a>
 							</li>
 							<li>
-								<a href="#" class="waves-effect waves-yellow">
+								<a href="#" class="waves-effect ">
 									dashboard panel</a>
 							</li>
 						</ul>
@@ -369,7 +401,7 @@
    </div>
    -->
 			<div class="col-12 col-sm-6 col-lg-3">
-				<a class="sub-item-content bg4 d-flex align-items-center" href="">
+				<a class="sub-item-content bg2 d-flex align-items-center" href="">
 					<i class="material-icons">local_shipping</i>
 					<div class="w-100 p-2 text-center">
 						<h5 class="text-white" style="font-size: 1em; font-weight: 400">pesanan Hari ini</h5>
@@ -378,7 +410,7 @@
 				</a>
 			</div>
 			<div class="col-12 col-sm-6 col-lg-3 hidden-xs-down click-toggle">
-				<a class="sub-item-content bg4 d-flex align-items-center" href="">
+				<a class="sub-item-content bg2 d-flex align-items-center" href="">
 					<i class="material-icons">shopping_cart</i>
 					<div class="w-100 p-2 text-center">
 						<h5 class="text-white" style="font-size: 1em; font-weight: 400">Terjual Hari ini</h5>
@@ -387,7 +419,7 @@
 				</a>
 			</div>
 			<div class="col-12 col-sm-6 col-lg-3 hidden-xs-down click-toggle">
-				<a class="sub-item-content bg4 d-flex align-items-center" href="">
+				<a class="sub-item-content bg2 d-flex align-items-center" href="">
 					<i class="material-icons">group_add</i>
 					<div class="w-100 p-2 text-center">
 						<h5 class="text-white" style="font-size: 1em; font-weight: 400">Costumer baru</h5>
@@ -396,7 +428,7 @@
 				</a>
 			</div>
 			<div class="col-12 col-sm-6 col-lg-3 hidden-xs-down click-toggle">
-				<a class="sub-item-content bg4 d-flex align-items-center" href="">
+				<a class="sub-item-content bg2 d-flex align-items-center" href="">
 					<i class="material-icons">tablet_android</i>
 					<div class="w-100 p-2 text-center">
 						<h5 class="text-white" style="font-size: 1em; font-weight: 400">Halaman dilihat</h5>
@@ -710,9 +742,10 @@
 	<script src="js/Chart.min.js" type="text/javascript"></script>
 	<script src="js/jquery.easeScroll.js" type="text/javascript"></script>
 	<script type="text/javascript" src="js/waves.js"></script>
-	<script type="text/javascript" src="js/jquery.slimscroll.min.js"></script>
 	<script src="js/costum.js" type="text/javascript"></script>
 	<script>
+
+
 	</script>
 </body>
 

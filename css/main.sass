@@ -93,16 +93,39 @@ $text-l-icon: rgba(255, 255, 255, 0.3)
 	&.show
 		top: 0 !important
 	.search
-		input[type="text"]
-			+vendor(transition, width 225ms ease-out)
+		form
 			width: 50%
-			padding: 0.5em 1em
+			position: relative
+			a
+				position: absolute
+				top: 0
+				height: 40px
+				padding: 0 1em
+				right: 0
+				display: flex
+				align-items: center
+				border-radius: 2px
+				border: 1px solid $text-d-4
+				border-left: 0
+				background: white
+				color: $text-d-4
+				+vendor(transition, all 225ms ease-out)
+
+		input[type="text"]
+			padding: 0 1em
+			+vendor(transition, all 225ms ease-out)
+			width: 100%
+			height: 40px
 			border-radius: 2px
 			border: 1px solid $text-d-4
 			font-size: 0.9em
 			color: $text-d-1
 			&:focus
-				width: calc(50% + 2em)
+				outline: none !important
+				&~ a
+					color: $text-d-icon
+					&:hover
+						color: $lightBlue-700
 	
 	
 .apps-nav
@@ -137,7 +160,8 @@ $text-l-icon: rgba(255, 255, 255, 0.3)
 .logo
 	@extend .padding-nav
 	+bg-color($color1)
-	width: 220px
+	width: 240px
+
 .logo-btn
 	display: flex
 	align-items: center
@@ -164,7 +188,7 @@ $text-l-icon: rgba(255, 255, 255, 0.3)
 	height: 100%
 	display: flex
 	align-items: center
-	+vendor(transition, background-color 300ms)
+	+vendor(transition, all 300ms)
 	&:hover, &:focus, &:active
 		color: $lightBlue-700 !important
 		background-color: $text-d-5
@@ -289,7 +313,7 @@ body
 	overflow: auto
 
 .animate-side-menu
-	margin-left: -220px
+	margin-left: -240px
 
 .side-menu
 	@extend .animate-menu
@@ -299,11 +323,11 @@ body
 	z-index: 6 !important
 	width : 100%
 	height: calc(100% - 68px)
-	max-width: 220px
+	max-width: 240px
 	+bg-color($mono-f)
 	overflow-y: overlay
 	.menu-list
-		padding: 0.5em 0 2.5em 0
+		padding: 0 0 2.5em 0
 		>ul
 			>li
 				text-transform: capitalize
@@ -361,6 +385,25 @@ body
 		width: 12px
 		vertical-align: top
 		margin-top: 7px
+
+.user-profile
+	background: url(../img/bg_user.jpg) no-repeat center
+	background-color: white
+	background-size: cover
+	width: 100%
+	height: 150px
+.user-info
+	height: 100px
+	.user-thumb
+		width: 90px
+		padding: 0.825em
+		img
+			width: 100%
+			width: 100%
+			background: white
+.user-menu
+	height: 50px
+	
 
 .shadow-side
 	+vendor(box-shadow, 0 2px 5px rgba(0, 0, 0, 0.16))
@@ -546,14 +589,12 @@ footer
 @media screen and (min-width: 768px)
 	.outside-menu
 		+vendor(transition-duration, 275ms)
-		margin-left: 220px
+		margin-left: 240px
 
 @media screen and (max-width: 768px)
 	.search
-		input[type="text"]
-			width: 88% !important
-			&:focus
-				width: calc(88% + 1.5em) !important
+		form
+			width: 75% !important
 	
 @media screen and (max-width: 576px)
 	.logo

@@ -62,6 +62,10 @@ $(document).ready(function () {
 		$('.apps-nav').fadeIn(275);
 		e.stopPropagation();
 	});
+	$('.back-icon').click(function () {
+		$(".search-nav").removeClass('show');
+		$('.apps-nav').fadeOut(225);
+	});
 
 	$('.search-nav, .apps-nav, .side-menu').on('click', func.stop);
 
@@ -78,12 +82,6 @@ $(document).ready(function () {
 	//	prevent default a
 	$('.default').on('click', func.default);
 
-
-	$('#side-menu').slimScroll({
-		color: '#00f',
-		size: '10px',
-		height: '100%',
-	});
 	//auto resize mobile version
 	$(func.resize);
 	//accordion ul li a 

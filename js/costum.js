@@ -1,5 +1,4 @@
 $(document).ready(function () {
-
 	//	inisialisasi variabel-----------------------------------------------
 	var accord = $('#accordion').find('li .btn-collapse'),
 		cartJual = document.getElementById('cart-penjualan'),
@@ -12,11 +11,11 @@ $(document).ready(function () {
 			resize: function () {
 				w = $(window).width();
 				if (w < 768) {
-					$('.outside-menu').addClass('animate-outside-menu');
-					$('.side-menu').addClass('animate-side-menu');
+					$('main').removeClass('push');
+					$('.side-menu').addClass('hide');
 				} else {
-					$('.outside-menu').removeClass('animate-outside-menu');
-					$('.side-menu').removeClass('animate-side-menu');
+					$('main').addClass('push');
+					$('.side-menu').removeClass('hide');
 				}
 
 			},
@@ -43,15 +42,13 @@ $(document).ready(function () {
 			}
 		};
 	//	Aksi Action---------------------------------------------
-
-
+	$('.scrollbar-inner, .scrollbar-macosx').scrollbar({
+		"ignoreMobile": true,
+		"disableBodyScroll": true
+	});
 	$('.btn-chat').click(function () {
-		w = $(window).width();
 		$('.side-chat').toggleClass('show');
-		if (w < 768) {
-			$('.outside-menu').addClass('animate-outside-menu');
-			$('.side-menu').addClass('animate-side-menu');
-		}
+		$(func.resize);
 	});
 	$('.btn-search-nav').click(function (e) {
 		$('.search-nav').toggleClass('show');
@@ -70,14 +67,13 @@ $(document).ready(function () {
 	$('.search-nav, .side-menu, .side-chat, .btn-chat').on('click', func.stop);
 
 	$(document).click(function () {
-		var w = $(window).width();
 		$(".search-nav").removeClass('show');
 		$('.apps-nav').fadeOut(225);
 		$('.side-chat').removeClass('show');
+		var w = $(window).width();
 		if (w < 768) {
-			$('.outside-menu').addClass('animate-outside-menu');
-			$('.side-menu').addClass('animate-side-menu');
-
+			$('main').removeClass('push');
+			$('.side-menu').addClass('hide');
 		}
 	});
 	//	prevent default a
@@ -133,8 +129,8 @@ $(document).ready(function () {
 		if (w < 768) {
 			$('.side-chat').removeClass('show');
 		}
-		$('.outside-menu').toggleClass('animate-outside-menu');
-		$('.side-menu').toggleClass('animate-side-menu');
+		$('main').toggleClass('push');
+		$('.side-menu').toggleClass('hide');
 		e.stopPropagation();
 	});
 

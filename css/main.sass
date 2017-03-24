@@ -9,6 +9,7 @@
 	-o-#{$property}: $value
 	$property: $value
 
+$bezier-1: cubic-bezier(0.19, 1, 0.22, 1)
 $color1: $lightBlue-900
 $color2: #ec2534
 $color3: #f8c84f
@@ -44,7 +45,8 @@ $text-l-icon: rgba(255, 255, 255, 0.3)
 	@extend .bg-white
 	margin-bottom: 1.5em
 	padding: 3em 0.5em
-	small
+	span
+		font-size: 0.9em
 		color: $text-d-2
 
 // material design---------------------------------------------------
@@ -83,7 +85,7 @@ $text-l-icon: rgba(255, 255, 255, 0.3)
 	font-size: 3rem
 
 *
-	+vendor(transition-timing-function, cubic-bezier(0.19, 1, 0.22, 1))
+	+vendor(transition-timing-function, $bezier-1)
 	
 //hide-nav
 .padding-nav
@@ -137,7 +139,7 @@ $text-l-icon: rgba(255, 255, 255, 0.3)
 	
 	
 .apps-nav
-	+bg-color($color1)
+	+bg-color(white)
 	display: none
 	position: fixed
 	top: 0
@@ -202,19 +204,36 @@ $text-l-icon: rgba(255, 255, 255, 0.3)
 		background-color: $text-d-5
 
 .quick-icon
-	background-color: $red-400
-	font-size: 0.75em
-	color: white
-	padding: 0.25em
-	width: 2em
-	height: 2em
+	color: $red-400
+	font-size: 12px !important
 	position: absolute
-	top: -45%
-	right: -25%
+	top: 25%
+	right: 20%
 
 .shadow-nav
 	+vendor (box-shadow, 0 2px 5px rgba(0, 0, 0, 0.16))
-	
+
+.dropdown-pointer
+	&.show:before
+		display: block
+	&:before
+		display: none
+		@extend .animated-medium, .zoomIn
+		+vendor(transform, rotate(45deg))
+		z-index: 3
+		border: 8px solid 
+		border-color: white transparent transparent white
+		bottom: -7px
+		left: 50%
+		content: " "
+		height: 0
+		width: 0
+		position: absolute
+		+vendor (transform-origin, 0 0)
+		+vendor (box-shadow, -2px -2px 2px 0 rgba(0, 0, 0, 0.12))
+.dropdown-wrap
+	margin: 0.5em 0
+	max-height: 220px
 .dropdown-menu
 	z-index: 2 !important
 	margin-top: 0 !important
@@ -224,32 +243,25 @@ $text-l-icon: rgba(255, 255, 255, 0.3)
 	border-radius: 2px !important
 	font-size: 0.9em
 	color: #333
-	&-center
-		left: 50%
-		right: auto
-		+vendor(transform, translateX(-50%))
-	&-right:before
-		left: 90% !important
-	&-center:before
-		left: 50% !important
-	&:before
-		+vendor(transform, rotate(45deg))
-		border: 6px solid 
-		border-color: white transparent transparent white
-		top: -8px
-		left: 10%
-		content: " "
-		height: 0
-		width: 0
-		position: absolute
-		+vendor (transform-origin, 0 0)
-		+vendor (box-shadow, -1.5px -1.5px 3px 0px rgba(0, 0, 0, 0.15))
 	.dropdown-item-title
 		font-size: 1.025em
 		text-transform: uppercase
 		color: $text-d-2
-		padding: 0.7em 1em 1em 1em 
+		padding: 0.7em 0 1em 1em 
 		border-bottom: 1px solid $text-d-5
+	.dropdown-item-footer
+		margin-bottom: -0.5em
+		border-radius: 0 0 2px 2px !important
+		font-size: 1.025em
+		text-transform: Capitalize
+		+bg-color($grey-200)
+		border-top: 1px solid $text-d-5
+		text-align: center
+		a
+			display: block
+			padding: 1em 
+			color: $lightBlue-700
+		
 	.dropdown-item
 		color: $text-d-1
 		text-transform: capitalize
@@ -257,13 +269,56 @@ $text-l-icon: rgba(255, 255, 255, 0.3)
 		padding: 1em 1em !important
 		+vendor(transition, all 275ms ease-out)
 		i
+			font-size: 1.1rem
 			float: right
-			color: $text-d-2
+			color: $text-d-3
 			width: 1em
 		&:hover
 			color: $lightBlue-700
 			i
 				color: $lightBlue-700
+	.dropdown-item-notif
+		width: 400px
+		display: block
+		color: $text-d-1
+		text-transform: capitalize
+		font-size: 1em
+		padding: 1em 1em !important
+		+vendor(transition, all 275ms ease-out)
+		.text
+			font-size: 0.9em
+		.circle-icon
+			font-size: 0.825rem !important
+			margin-right: 0.5em
+		.badge
+			text-transform: lowercase 
+			font-weight: normal
+			font-style: italic
+			font-size: 0.8em
+			color: #b9b9b9
+			i
+				margin-left: 6px
+				font-size: 0.8rem
+			
+.circle-icon
+	text-align: center
+	display: flex-inline
+	justify-content: center
+	align-items: center
+	border-radius: 50%
+	color: $mono-f
+	padding: 0.425em
+	&.size2
+		width: 24px
+		height: 24px
+	&.danger
+		+bg-color($red-500)
+	&.warning
+		+bg-color($yellow-600)
+	&.good
+		+bg-color($green-500)
+	&.info
+		+bg-color($blue-500)
 
 .table td
 	vertical-align: middle !important
@@ -280,21 +335,18 @@ h1, h2, h3, h4, h5
 .decoration-none
 	a
 		text-decoration: none !important
-		
+
 .bg-none
 	background: none
 	
-.animate-menu
-	+vendor(transition-duration, 300ms)
-	
-.animate-outside-menu
-	margin-left: 0 !important
 html
 	overflow-y: overlay !important
 body
 	font-family: Roboto, Helvetica, sans-serif !important
 	+bg-color($grey-300)
-//	background-color: $color7
+
+main
+	+vendor(transition, all 275ms $bezier-1)
 
 .dim-background
 	@extend .fixed
@@ -306,16 +358,13 @@ body
 	background: rgba(0,0,0,0.8)
 	
 .fixed
-	position: fixed
+	position: fixed !important
 
 .over-hide
 	overflow: hidden
 
 .over-auto
 	overflow: auto
-
-.animate-side-menu
-	margin-left: -240px
 
 .side-chat
 	@extend .shadow-side
@@ -327,13 +376,13 @@ body
 	height: calc(100% - 68px)
 	max-width: 240px
 	+bg-color($mono-f)
-	overflow-y: overlay
-	+vendor(transition, all 275ms cubic-bezier(0.19, 1, 0.22, 1))
+	overflow: hidden
+	+vendor(transition, all 275ms $bezier-1)
 	&.show
 		right: 0 !important
 
 .side-menu
-	@extend .animate-menu
+	+vendor(transition-duration, 300ms)
 	@extend .fixed
 	left: 0
 	bottom: 0
@@ -342,12 +391,13 @@ body
 	height: calc(100% - 68px)
 	max-width: 240px
 	+bg-color($mono-f)
-	overflow-y: overlay
+	&.hide
+		left: -240px
 	.menu-list
 		padding: 0 0 2.5em 0
 		>ul
 			>li
-				margin: 2px 0
+				margin: 3px 0
 				text-transform: capitalize
 				+vendor(transition, background-color 300ms)
 				&:hover, &:focus, &:active
@@ -386,7 +436,7 @@ body
 					background-color: $mono-f
 				li
 					a
-						padding: 0.9em 0 0.9em 3em
+						padding: 0.9em 2em 0.9em 3em
 						width: 100%
 						&:hover
 							color: $lightBlue-700
@@ -461,7 +511,7 @@ body
 .scroll-top
 	display: block
 	border-radius: 5px
-	position: fixed
+	@extend .fixed
 	right: 1em
 	bottom: 1em
 	width: 3em
@@ -595,6 +645,7 @@ body
 	font-size: 0.625rem
 	padding: 4px 8px 3px 7px !important
 	&.right
+		margin-right: 0
 		float: right
 	&.danger
 		background-color: $red-500
@@ -616,7 +667,16 @@ footer
 	animation-duration: 1s
 	-webkit-animation-fill-mode: both
 	animation-fill-mode: both
-
+.animated-fast
+	-webkit-animation-duration: 275ms
+	animation-duration: 275ms
+	-webkit-animation-fill-mode: both
+	animation-fill-mode: both
+.animated-medium
+	-webkit-animation-duration: 500ms
+	animation-duration: 500ms
+	-webkit-animation-fill-mode: both
+	animation-fill-mode: both
 
 @keyframes swing
 	20%
@@ -671,9 +731,37 @@ footer
 	-webkit-animation-name: fadeInUp
 	animation-name: fadeInUp
 
+@-webkit-keyframes zoomIn
+	from
+		opacity: 0
+		-webkit-transform: scale3d(.3, .3, .3)
+		transform: scale3d(.3, .3, .3)
+	
+
+	50%
+		opacity: 1
+	
+
+
+@keyframes zoomIn
+	from
+		opacity: 0
+		-webkit-transform: scale3d(.3, .3, .3)
+		transform: scale3d(.3, .3, .3)
+	
+
+	50%
+		opacity: 1
+	
+
+
+.zoomIn
+	-webkit-animation-name: zoomIn
+	animation-name: zoomIn
+
+
 @media screen and (min-width: 768px)
-	.outside-menu
-		+vendor(transition-duration, 275ms)
+	.push
 		margin-left: 240px
 
 @media screen and (max-width: 768px)
@@ -686,12 +774,20 @@ footer
 		width: 100%
 	.sm-height.canvas
 		max-height: 300px
-	.dropdown-sm-center
-		+vendor(transform, translateX(40%))
-	.dropdown-menu-center
-		po
-		width: 100vw !important
-	
+
+	.dropdown-menu-responsive
+		position: fixed
+		top: 68px
+		right: 0
+		width: 100%
+		.dropdown-item-notif
+			width: 100%
+			.badge
+				width: 100%
+				text-align: right		
+				
 @media screen and (max-width: 320px)
+	.row, .container-fluid
+		min-width: 220px !important
 	.hidden-xxs-down
 		display: none !important

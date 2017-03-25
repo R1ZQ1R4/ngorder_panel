@@ -19,7 +19,7 @@ $(document).ready(function () {
 				}
 
 			},
-
+			
 			default: function (e) {
 				e.preventDefault();
 			},
@@ -48,7 +48,10 @@ $(document).ready(function () {
 	});
 	$('.btn-chat').click(function () {
 		$('.side-chat').toggleClass('show');
-		$(func.resize);
+		if (w < 768) {
+			$('main').removeClass('push');
+			$('.side-menu').addClass('hide');
+		}
 	});
 	$('.btn-search-nav').click(function (e) {
 		$('.search-nav').toggleClass('show');
@@ -76,6 +79,7 @@ $(document).ready(function () {
 			$('.side-menu').addClass('hide');
 		}
 	});
+
 	//	prevent default a
 	$('.default').on('click', func.default);
 
@@ -138,20 +142,21 @@ $(document).ready(function () {
 	var myChart = new Chart(cartJual, {
 		type: 'line',
 		data: {
-			labels: ['11 Maret', '12 Maret', '13 Maret', '14 Maret', '15 Maret', '16 Maret', '17 Maret'],
+			// labels: ['11 Maret', '12 Maret', '13 Maret', '14 Maret', '15 Maret', '16 Maret', '17 Maret'],
+			labels: ['', '', '', '', '', '', ''],
 			datasets: [{
 				fill: true,
 				lineTension: 0.4,
-				backgroundColor: "rgba(89, 72, 255, 0.50)",
-				borderColor: "#384784",
+				backgroundColor: "rgba(2, 136, 209, 0.33)",
+				borderColor: "rgba(2, 136, 209, 1)",
 				borderCapStyle: 'butt',
 				type: 'line',
-				pointBackgroundColor: "#384784",
+				pointBackgroundColor: "rgba(2, 136, 209, 1)",
 				pointBorderWidth: 5,
-				pointHoverBorderColor: "#fff",
-				pointHoverBackgroundColor: "#ec2534",
-				pointHoverBorderWidth: 1,
-				pointHitRadius: 15,
+				pointHoverBorderColor: "#F44336",
+				pointHoverBackgroundColor: "#F44336",
+				pointHoverBorderWidth: 5,
+				pointHitRadius: 30,
 				label: 'Produk terjual',
 				data: [104, 162, 133, 217, 186, 169, 145],
 				}]
@@ -178,11 +183,11 @@ $(document).ready(function () {
 			datasets: [{
 				lineTension: 0,
 				fill: false,
-				borderColor: "#384784",
-				backgroundColor: "#384784",
+				borderColor: "#0288D1",
+				backgroundColor: "#0288D1",
 				borderCapStyle: 'butt',
 				type: 'line',
-				pointBackgroundColor: "#384784",
+				pointBackgroundColor: "#0288D1",
 				pointBorderWidth: 5,
 				pointHoverBorderColor: "#fff",
 				pointHoverBackgroundColor: "#ec2534",
@@ -232,12 +237,12 @@ $(document).ready(function () {
 			datasets: [{
 				data: [325000, 147000],
 				backgroundColor: [
-						"rgba(89, 72, 255, 0.7)",
-						"rgba(237, 226, 44, 0.7)"
+						"rgba(2, 136, 209, 0.8)",
+						"rgba(255, 202, 40, 0.8)"
 					],
 				hoverBackgroundColor: [
-						"rgba(89, 72, 255, 0.8)",
-						"rgba(237, 226, 44, 0.8)"
+						"rgba(2, 136, 209, 0.9)",
+						"rgba(255, 202, 40, 0.9)"
 					]
 				}]
 
@@ -262,18 +267,18 @@ $(document).ready(function () {
 			labels: ['11 Maret', '12 Maret', '13 Maret', '14 Maret', '15 Maret', '16 Maret', '17 Maret'],
 			datasets: [{
 					label: "Pesanan",
-					backgroundColor: 'rgba(89, 72, 255, 0.8)',
+					backgroundColor: 'rgba(2, 136, 209, 0.8)',
 					borderWidth: 1,
 					data: [65, 59, 80, 81, 56, 55, 40],
 				}, {
 					label: "Sukses",
-					backgroundColor: '#66BB6A',
+					backgroundColor: 'rgba(67, 160, 71, 0.8)',
 					borderWidth: 1,
 					data: [49, 47, 75, 64, 40, 55, 37],
 				},
 				{
 					label: "Batal",
-					backgroundColor: '#EF5350',
+					backgroundColor: 'rgba(244, 67, 54, 0.8)',
 					borderWidth: 1,
 					data: [16, 12, 5, 17, 16, 0, 3],
 				},

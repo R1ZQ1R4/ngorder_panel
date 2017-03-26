@@ -9,36 +9,32 @@
     <link rel="stylesheet" href="css/main.css">
     <link rel="stylesheet" href="css/jquery.scrollbar.css">
     <link rel="stylesheet" href="asset/material-design-icons-3.0.1/iconfont/material-icons.css">
-    <link rel="stylesheet" href="asset/css/font-awesome.min.css">
+    <link rel="stylesheet" type="text/css" href="css/flag-icon.css">
+    <link rel="stylesheet" href="css/fullcalendar.css">
 </head>
 <style SASS>
-.row>div[class*='col-'] {
-    display: flex;
-    flex: 1 0 auto;
-}
-
 .gutter-1em.row {
-    margin-right: -0.5em;
-    margin-left: -0.5em;
+    margin-right: -0.5rem;
+    margin-left: -0.5rem;
 }
 
 .gutter-15em>[class^="col-"],
 .gutter-15em>[class^=" col-"],
 .gutter-15em>[class^="col"] {
-    padding-right: 0.75em;
-    padding-left: 0.75em;
+    padding-right: 0.75rem;
+    padding-left: 0.75rem;
 }
 
 .mb-15em>[class^="col-"],
 .mb-15em>[class^="col"],
 .mb-15em>[class^=" col-"] {
-    margin-bottom: 1.5em;
+    margin-bottom: 1.5rem;
 }
 
 .mb-2em>[class^="col-"],
 .mb-2em>[class^="col"],
 .mb-2em>[class^=" col-"] {
-    margin-bottom: 2em;
+    margin-bottom: 2rem;
 }
 </style>
 
@@ -73,11 +69,12 @@
                         <a role="button" data-toggle="dropdown" title="Tambah cepat" class="quick-btn waves-effect waves-light ">
                             <i class="material-icons md-15">add_circle_outline</i>
                         </a>
-                        <div class="dropdown-menu dropdown-menu-responsive animated-fast zoomIn dropdown-sm-center">
+                        <div class="dropdown-menu dropdown-menu-responsive animated-fast zoomIn">
                             <div class="dropdown-item-title">Tambah Cepat</div>
                             <a class="dropdown-item" href=""><i class="material-icons md-1">add_shopping_cart</i>
-									                                   a>
-									<a class="dropdown-item" href=""><i class="material-icons md-1">library_add</i>
+                            Pesanan
+									        </a>
+                            <a class="dropdown-item" href=""><i class="material-icons md-1">library_add</i>
                                      produk</a>
                             <a class="dropdown-item" href=""><i class="material-icons md-1">money_off</i>
                                      pengeluaran</a>
@@ -85,6 +82,23 @@
                                      pelanggan</a>
                             <a class="dropdown-item" href=""><i class="material-icons md-1">wifi</i>
                                      penyuplai</a>
+                        </div>
+                    </li>
+                    <li class="dropdown dropdown-pointer h-100">
+                        <a role="button" data-toggle="dropdown" title="Pemberitahuan" class="quick-btn waves-effect waves-light">
+                            <i class="material-icons md-15">language</i>
+                        </a>
+                        <div class="dropdown-menu dropdown-menu-right dropdown-menu-responsive animated-fast zoomIn">
+                            <div class="dropdown-item-title d-flex align-items-center justify-content-between">Pilih Bahasa
+                            </div>
+                            <a class="dropdown-item active" href="">
+									Indonesia
+                                    <i class="flag-icon flag-icon-id"></i>
+                                    </a>
+                            <a class="dropdown-item" href="">
+									Inggris
+                                    <i class="flag-icon flag-icon-gb"></i>
+                                    </a>
                         </div>
                     </li>
                     <li class="dropdown dropdown-pointer h-100">
@@ -100,7 +114,7 @@
                                 <div class="dropdown-item-notif">
                                     <i class="material-icons circle-icon good">flash_on</i>
                                     <span class="text">Server berjalan normal</span>
-                                    <div class="badge right badge-pill">
+                                    <div class="badge right badge-pill time">
                                         beberapa detik lalu
                                         <i class="material-icons">alarm</i>
                                     </div>
@@ -108,7 +122,7 @@
                                 <div class="dropdown-item-notif">
                                     <i class="material-icons circle-icon info">local_shipping</i>
                                     <span class="text">2 pesanan baru</span>
-                                    <div class="badge right badge-pill">
+                                    <div class="badge right badge-pill time">
                                         1 menit lalu
                                         <i class="material-icons">alarm</i>
                                     </div>
@@ -116,7 +130,7 @@
                                 <div class="dropdown-item-notif">
                                     <i class="material-icons circle-icon warning">mail</i>
                                     <span class="text">Credit SMS tinggal sedikit</span>
-                                    <div class="badge right badge-pill">
+                                    <div class="badge right badge-pill time">
                                         13 menit lalu
                                         <i class="material-icons">alarm</i>
                                     </div>
@@ -124,7 +138,7 @@
                                 <div class="dropdown-item-notif">
                                     <i class="material-icons circle-icon danger">local_shipping</i>
                                     <span class="text">2 produk stok habis</span>
-                                    <div class="badge right badge-pill">
+                                    <div class="badge right badge-pill time">
                                         27 menit lalu
                                         <i class="material-icons">alarm</i>
                                     </div>
@@ -132,7 +146,7 @@
                                 <div class="dropdown-item-notif">
                                     <i class="material-icons circle-icon danger">flash_on</i>
                                     <span class="text">Server berjalan lambat</span>
-                                    <div class="badge right badge-pill">
+                                    <div class="badge right badge-pill time">
                                         2 jam lalu
                                         <i class="material-icons">alarm</i>
                                     </div>
@@ -140,7 +154,7 @@
                                 <div class="dropdown-item-notif">
                                     <i class="material-icons circle-icon info">local_shipping</i>
                                     <span class="text">1 pesanan baru</span>
-                                    <div class="badge right badge-pill">
+                                    <div class="badge right badge-pill time">
                                         1 hari lalu
                                         <i class="material-icons">alarm</i>
                                     </div>
@@ -202,7 +216,7 @@
                                 <a role="button" data-toggle="dropdown" title="Tambah cepat" class="quick-btn waves-effect waves-light ">
                                     <i class="material-icons md-15">add_circle_outline</i>
                                 </a>
-                                <div class="dropdown-menu dropdown-menu-responsive animated-fast zoomIn dropdown-sm-center">
+                                <div class="dropdown-menu dropdown-menu-responsive animated-fast zoomIn">
                                     <div class="dropdown-item-title">Tambah Cepat</div>
                                     <a class="dropdown-item" href=""><i class="material-icons md-1">add_shopping_cart</i>
 									                                     pesanan</a>
@@ -225,6 +239,23 @@
                             </li>
                             <li class="dropdown dropdown-pointer h-100">
                                 <a role="button" data-toggle="dropdown" title="Pemberitahuan" class="quick-btn waves-effect waves-light">
+                                    <i class="material-icons md-15">language</i>
+                                </a>
+                                <div class="dropdown-menu dropdown-menu-right dropdown-menu-responsive animated-fast zoomIn">
+                                    <div class="dropdown-item-title d-flex align-items-center justify-content-between">Pilih Bahasa
+                                    </div>
+                                    <a class="dropdown-item active" href="">
+									Indonesia
+                                    <i class="flag-icon flag-icon-id"></i>
+                                    </a>
+                                    <a class="dropdown-item" href="">
+									Inggris
+                                    <i class="flag-icon flag-icon-gb"></i>
+                                    </a>
+                                </div>
+                            </li>
+                            <li class="dropdown dropdown-pointer h-100">
+                                <a role="button" data-toggle="dropdown" title="Pemberitahuan" class="quick-btn waves-effect waves-light">
                                     <i class="material-icons md-15">notifications_none</i>
                                     <span class="material-icons quick-icon">fiber_manual_record</span>
                                 </a>
@@ -236,7 +267,7 @@
                                         <div class="dropdown-item-notif">
                                             <i class="material-icons circle-icon good">flash_on</i>
                                             <span class="text">Server berjalan normal</span>
-                                            <div class="badge right badge-pill">
+                                            <div class="badge right badge-pill time">
                                                 beberapa detik lalu
                                                 <i class="material-icons">alarm</i>
                                             </div>
@@ -244,7 +275,7 @@
                                         <div class="dropdown-item-notif">
                                             <i class="material-icons circle-icon info">local_shipping</i>
                                             <span class="text">2 pesanan baru</span>
-                                            <div class="badge right badge-pill">
+                                            <div class="badge right badge-pill time">
                                                 1 menit lalu
                                                 <i class="material-icons">alarm</i>
                                             </div>
@@ -252,7 +283,7 @@
                                         <div class="dropdown-item-notif">
                                             <i class="material-icons circle-icon warning">mail</i>
                                             <span class="text">Credit SMS tinggal sedikit</span>
-                                            <div class="badge right badge-pill">
+                                            <div class="badge right badge-pill time">
                                                 13 menit lalu
                                                 <i class="material-icons">alarm</i>
                                             </div>
@@ -260,7 +291,7 @@
                                         <div class="dropdown-item-notif">
                                             <i class="material-icons circle-icon danger">local_shipping</i>
                                             <span class="text">2 produk stok habis</span>
-                                            <div class="badge right badge-pill">
+                                            <div class="badge right badge-pill time">
                                                 27 menit lalu
                                                 <i class="material-icons">alarm</i>
                                             </div>
@@ -268,7 +299,7 @@
                                         <div class="dropdown-item-notif">
                                             <i class="material-icons circle-icon danger">flash_on</i>
                                             <span class="text">Server berjalan lambat</span>
-                                            <div class="badge right badge-pill">
+                                            <div class="badge right badge-pill time">
                                                 2 jam lalu
                                                 <i class="material-icons">alarm</i>
                                             </div>
@@ -276,7 +307,7 @@
                                         <div class="dropdown-item-notif">
                                             <i class="material-icons circle-icon info">local_shipping</i>
                                             <span class="text">1 pesanan baru</span>
-                                            <div class="badge right badge-pill">
+                                            <div class="badge right badge-pill time">
                                                 1 hari lalu
                                                 <i class="material-icons">alarm</i>
                                             </div>
@@ -335,7 +366,7 @@
                 <li>
                     <a class="btn-collapse waves-effect waves-light" href="#pesanan-collapse" data-parent="#accordion">
                         <i class="material-icons">local_shipping</i> Pesanan
-                        <span class="badge teal badge-pill ml-2">Baru</span>
+                        <span class="badge bg-lightBlue badge-pill ml-2">Baru</span>
                         <span class="material-icons menu-down">keyboard_arrow_right</span>
                     </a>
                     <div id="pesanan-collapse" class="collapse">
@@ -398,7 +429,7 @@
                 <li>
                     <a class="btn-collapse waves-effect waves-light" href="#laporan-collapse" data-parent="#accordion">
                         <i class="material-icons">show_chart</i> Laporan
-                        <span class="badge teal badge-pill ml-2">Baru</span>
+                        <span class="badge bg-lightBlue badge-pill ml-2">Baru</span>
                         <span class="material-icons menu-down">keyboard_arrow_right</span>
                     </a>
                     <div id="laporan-collapse" class="collapse">
@@ -476,7 +507,7 @@
                 </div>
             </div>
         </div>
-        <div class="row no-gutters gutter-15em mb-15em mx-0 mx-sm-2">
+        <div class="row no-gutters gutter-15em mb-15em">
             <div class="col-12 col-sm-6 col-lg-3">
                 <a class="sub-item-content waves-effect d-flex flex-column">
                     <div class="sub-title">
@@ -521,180 +552,162 @@
                     </div>
                 </a>
             </div>
-            <div class="col-12 hidden-sm-up">
+            <div class="col-12 col-sm-6 col-lg-3 hidden-sm-up">
                 <a role="button" id="toggle-show" class="btn btn-block rounded-0">
                     <i class="material-icons">expand_more</i>
                 </a>
             </div>
-            <div class="col-12 col-md-8 col-xl-8">
+        </div>
+        <div class="grid">
+            <div class="grid-sizer col-12 col-sm-6 col-lg-4 col-xl-3"></div>
+            <div class="col-12 col-lg-8 col-xl-6 grid-item">
                 <div class="item-content">
                     <div class="item-title d-flex align-items-center justify-content-between">
                         <div class="item-judul">
                             <h5>
-								Statistik penjualan
+								Statistik Penjualan
 							</h5>
+                            <small></small>
                         </div>
                         <div class="item-btn d-flex ">
-                            <div class="item-icon d-inline">
-                                <a role="button" class="d-flex justify-content-center align-items-center">
-                                    <i class="material-icons md-12" title="Print dokumen ini">print</i>
-                                </a>
-                            </div>
                             <div class="dropdown dropdown-pointer item-icon d-inline">
                                 <a role="button" class="d-flex justify-content-center align-items-center" data-toggle="dropdown">
-                                    <i class="material-icons md-12" title="Download berkas">file_download</i>
+                                    <i class="material-icons md-12" title="Download berkas">more_vert</i>
                                 </a>
                                 <div class="dropdown-menu animated-fast zoomIn dropdown-menu-right">
-                                    <a class="dropdown-item" href="#"><i class="material-icons md-1">photo</i>
+                                    <a class="dropdown-item" href="#"><i class="material-icons md-1">print</i>
+                                    cetak dokumen</a><a class="dropdown-item" href="#"><i class="material-icons md-1">file_download</i>
                                     simpan gambar</a>
-                                    <a class="dropdown-item" href="#"><i class="material-icons md-1" title="Download berkas">picture_as_pdf</i>
-                                    simpan as PDF</a>
                                 </div>
                             </div>
                         </div>
                     </div>
-                    <div class="p-3">
-                        <canvas id="cart-penjualan" width="100%" height="50%"></canvas>
+                    <div class="canvas-wrap">
+                        <canvas id="cart-penjualan"></canvas>
                     </div>
                 </div>
             </div>
-            <div class="col-12 col-md-6 col-xl-4">
+            <div class="col-12 col-sm-6 col-lg-4 col-xl-3 grid-item">
+                <div class="item-content">
+                    <div class="card">
+                        <div class="card-block">
+                            Catatan
+                            <div class="logo-btn btn-absolute right">
+                                <div class="dropdown">
+                                    <a role="button" class="d-flex justify-content-center align-items-center" data-toggle="dropdown">
+                                        <i class="material-icons md-12" title="Download berkas">more_vert</i>
+                                    </a>
+                                    <div class="dropdown-menu animated-fast zoomIn dropdown-menu-right">
+                                        <a class="dropdown-item" href="#"><i class="material-icons md-1">edit</i>
+                                    edit</a><a class="dropdown-item" href="#"><i class="material-icons md-1">settings</i>
+                                    settings</a>
+                                    </div>
+                                </div>
+                            </div>
+                        </div>
+                        <ul class="list-group list-group-flush  dropdown-wrap scrollbar-inner">
+                            <!-- <li class="list-group-item">
+                                <label class="custom-control custom-checkbox">
+                                    <input type="checkbox" class="custom-control-input">
+                                    <span class="custom-control-indicator"></span>
+                                    <span class="custom-control-description">Tanya supplier tentang produk sepatu terbaru</span>
+                                </label>
+                            </li> -->
+                            <li class="list-group-item">
+                                <label class="custom-control custom-checkbox">
+                                    <input type="checkbox" class="custom-control-input">
+                                    <span class="custom-control-indicator"></span>
+                                    <span class="custom-control-description">Mengambil stok barang suplier 200 buah</span>
+                                </label>
+                            </li>
+                            <li class="list-group-item">
+                                <label class="custom-control custom-checkbox">
+                                    <input type="checkbox" class="custom-control-input">
+                                    <span class="custom-control-indicator"></span>
+                                    <span class="custom-control-description">Tambah pengeluaran perpanjang akun ngorder</span>
+                                </label>
+                            </li>
+                            <li class="list-group-item">
+                                <label class="custom-control custom-checkbox">
+                                    <input type="checkbox" class="custom-control-input">
+                                    <span class="custom-control-indicator"></span>
+                                    <span class="custom-control-description">Update harga data produk baju diskon</span>
+                                </label>
+                            </li>
+                        </ul>
+                        <a role="button" class="btn-footer">Lihat semua</a>
+                    </div>
+                </div>
+            </div>
+            <div class="col-12 col-sm-6 col-lg-8 col-xl-3 grid-item">
                 <div class="item-content">
                     <div class="item-title d-flex align-items-center justify-content-between">
-                        <div class="item-judul d-flex ">
+                        <div class="item-judul">
                             <h5>
-								Keuntungan
+								Keuangan
 							</h5>
+                            <small></small>
                         </div>
                         <div class="item-btn d-flex ">
-                            <div class="item-icon d-inline">
-                                <a role="button" class="d-flex justify-content-center align-items-center">
-                                    <i class="material-icons md-12" title="Print dokumen ini">print</i>
-                                </a>
-                            </div>
                             <div class="dropdown dropdown-pointer item-icon d-inline">
                                 <a role="button" class="d-flex justify-content-center align-items-center" data-toggle="dropdown">
-                                    <i class="material-icons md-12" title="Download berkas">file_download</i>
+                                    <i class="material-icons md-12" title="Download berkas">more_vert</i>
                                 </a>
                                 <div class="dropdown-menu animated-fast zoomIn dropdown-menu-right">
-                                    <a class="dropdown-item" href="#"><i class="material-icons md-1">photo</i>
+                                    <a class="dropdown-item" href="#"><i class="material-icons md-1">print</i>
+                                    cetak dokumen</a><a class="dropdown-item" href="#"><i class="material-icons md-1">file_download</i>
                                     simpan gambar</a>
-                                    <a class="dropdown-item" href="#"><i class="material-icons md-1" title="Download berkas">picture_as_pdf</i>
-                                    simpan as PDF</a>
                                 </div>
                             </div>
                         </div>
                     </div>
-                    <div class="p-3">
-                        <canvas id="cart-penjualan" width="100%" height="100%"></canvas>
+                    <div class="canvas-wrap">
+                        <canvas class="" id="cart-pengeluaran-pemasukan"></canvas>
                     </div>
                 </div>
             </div>
-            <div class="col-12 col-md-6 col-xl-4">
+            <div class="col-12  col-lg-4 col-xl-6 grid-item">
                 <div class="item-content">
-                    <div class="item-title d-flex align-items-center justify-content-between">
-                        <div class="item-judul d-flex ">
-                            <h5>
-								Pengeluaran Pemasukan
-							</h5>
-                        </div>
-                        <div class="item-btn d-flex ">
-                            <div class="item-icon d-inline">
-                                <a role="button" class="d-flex justify-content-center align-items-center">
-                                    <i class="material-icons md-12" title="Print dokumen ini">print</i>
-                                </a>
-                            </div>
-                            <div class="dropdown dropdown-pointer item-icon d-inline">
-                                <a role="button" class="d-flex justify-content-center align-items-center" data-toggle="dropdown">
-                                    <i class="material-icons md-12" title="Download berkas">file_download</i>
-                                </a>
-                                <div class="dropdown-menu animated-fast zoomIn dropdown-menu-right">
-                                    <a class="dropdown-item" href="#"><i class="material-icons md-1">photo</i>
-                                    simpan gambar</a>
-                                    <a class="dropdown-item" href="#"><i class="material-icons md-1" title="Download berkas">picture_as_pdf</i>
-                                    simpan as PDF</a>
-                                </div>
-                            </div>
-                        </div>
-                    </div>
-                    <div class="p-3">
-                        <canvas class="" id="cart-pengeluaran-pemasukan" width="100%" height="100%"></canvas>
-                    </div>
+                    <div id='calendar'></div>
                 </div>
             </div>
-            <div class="col-12 hidden-md-down">
+            <div class="col-12 col-lg-8 col-xl-6 grid-item">
                 <div class="item-content">
                     <div class="item-title d-flex align-items-center justify-content-between">
-                        <div class="item-judul d-flex ">
-                            <h5>
-								Rekap
-							</h5>
-                        </div>
-                        <div class="item-btn d-flex ">
-                            <div class="item-icon d-inline">
-                                <a role="button" class="d-flex justify-content-center align-items-center">
-                                    <i class="material-icons md-12" title="Print dokumen ini">print</i>
-                                </a>
-                            </div>
-                            <div class="dropdown dropdown-pointer item-icon d-inline">
-                                <a role="button" class="d-flex justify-content-center align-items-center" data-toggle="dropdown">
-                                    <i class="material-icons md-12" title="Download berkas">file_download</i>
-                                </a>
-                                <div class="dropdown-menu animated-fast zoomIn dropdown-menu-right">
-                                    <a class="dropdown-item" href="#"><i class="material-icons md-1">photo</i>
-                                    simpan gambar</a>
-                                    <a class="dropdown-item" href="#"><i class="material-icons md-1" title="Download berkas">picture_as_pdf</i>
-                                    simpan as PDF</a>
-                                </div>
-                            </div>
-                        </div>
-                    </div>
-                    <div class="p-3">
-                        <canvas id="cart-rekap" width="100%" height="40%"></canvas>
-                    </div>
-                </div>
-            </div>
-            <div class="col-12 col-md-6 col-xl-6">
-                <div class="item-content">
-                    <div class="item-title d-flex align-items-center justify-content-between">
-                        <div class="item-judul d-flex ">
+                        <div class="item-judul">
                             <h5>
 								Status Pesanan
 							</h5>
+                            <small></small>
                         </div>
                         <div class="item-btn d-flex ">
-                            <div class="item-icon d-inline">
-                                <a role="button" class="d-flex justify-content-center align-items-center">
-                                    <i class="material-icons md-12" title="Print dokumen ini">print</i>
-                                </a>
-                            </div>
                             <div class="dropdown dropdown-pointer item-icon d-inline">
                                 <a role="button" class="d-flex justify-content-center align-items-center" data-toggle="dropdown">
-                                    <i class="material-icons md-12" title="Download berkas">file_download</i>
+                                    <i class="material-icons md-12" title="Download berkas">more_vert</i>
                                 </a>
                                 <div class="dropdown-menu animated-fast zoomIn dropdown-menu-right">
-                                    <a class="dropdown-item" href="#"><i class="material-icons md-1">photo</i>
+                                    <a class="dropdown-item" href="#"><i class="material-icons md-1">print</i>
+                                    cetak dokumen</a><a class="dropdown-item" href="#"><i class="material-icons md-1">file_download</i>
                                     simpan gambar</a>
-                                    <a class="dropdown-item" href="#"><i class="material-icons md-1" title="Download berkas">picture_as_pdf</i>
-                                    simpan as PDF</a>
                                 </div>
                             </div>
                         </div>
                     </div>
-                    <div class="p-3">
-                        <canvas id="cart-pesanan" width="100%" height="50%"></canvas>
+                    <div>
+                        <div class="canvas-wrap">
+                            <canvas id="cart-pesanan"></canvas>
+                        </div>
                     </div>
                 </div>
             </div>
-            
-            <div class="col-12 col-lg-6">
+            <div class="col-12 col-lg-8 col-xl-6 grid-item">
                 <div class="item-content">
                     <div class="item-title d-flex align-items-center justify-content-between">
                         <div class="item-judul">
                             <h5>
 								Pesanan terakhir
 							</h5>
-							<small>Proses secara cepat pesanan terakhir</small>
+                            <small>Proses secara cepat pesanan terakhir</small>
                         </div>
                         <div class="item-btn d-flex ">
                             <div class="dropdown dropdown-pointer item-icon d-inline">
@@ -711,15 +724,15 @@
                     </div>
                     <div class="table-material">
                         <table class="table table-hover">
-                        <thead>
-                        	<tr>
-                        		<td>Pelanggan</td>
-                        		<td>Gambar</td>
-                        		<td>Nama Brang</td>
-                        		<td>Jumlah</td>
-                        		<td>Aksi</td>
-                        	</tr>
-                        </thead>
+                            <thead>
+                                <tr>
+                                    <td>Pelanggan</td>
+                                    <td>Gambar</td>
+                                    <td>Nama Brang</td>
+                                    <td>Jumlah</td>
+                                    <td>Aksi</td>
+                                </tr>
+                            </thead>
                             <tbody class="">
                                 <tr>
                                     <td>lili</td>
@@ -769,17 +782,17 @@
                             </tbody>
                         </table>
                     </div>
-                    <a role="button"class="btn-footer">Lihat Semua</a>
+                    <a role="button" class="btn-footer">Lihat Semua</a>
                 </div>
             </div>
-            <div class="col-12 col-md-6">
+            <div class="col-12 col-sm-6 col-lg-4 col-xl-6 grid-item">
                 <div class="item-content">
                     <div class="item-title d-flex align-items-center justify-content-between">
                         <div class="item-judul">
                             <h5>
 								Aktifitas terakhir
 							</h5>
-							<small>Lihat bagaimana aktifitasmu akhir ini</small>
+                            <small>Lihat bagaimana aktifitasmu akhir ini</small>
                         </div>
                         <div class="item-btn d-flex ">
                             <div class="dropdown dropdown-pointer item-icon d-inline">
@@ -795,11 +808,61 @@
                             </div>
                         </div>
                     </div>
+                    <div class="">
+                        <ul class="note">
+                            <li class="divider">
+                                <div class="note-icon">
+                                    <i class="material-icons circle-icon good">local_shipping</i>
+                                </div>
+                                <div class="note-item">
+                                    Kamu telah memproses 4 pesanan baru
+                                    <div class="badge badge-pill time">
+                                        beberapa detik lalu
+                                        <i class="material-icons">alarm</i>
+                                    </div>
+                                </div>
+                            </li>
+                            <li class="divider">
+                                <div class="note-icon"><i class="material-icons circle-icon danger">people</i>
+                                </div>
+                                <div class="note-item">
+                                    Kamu telah menghapus 1 pelanggan
+                                    <div class="badge badge-pill time">
+                                        1 menit lalu
+                                        <i class="material-icons">alarm</i>
+                                    </div>
+                                </div>
+                            </li>
+                            <li class="divider">
+                                <div class="note-icon"><i class="material-icons circle-icon good">shopping_basket</i>
+                                </div>
+                                <div class="note-item">
+                                    Kamu telah menambahkan 2 produk baru
+                                    <div class="badge badge-pill time">
+                                        3 menit lalu
+                                        <i class="material-icons">alarm</i>
+                                    </div>
+                                </div>
+                            </li>
+                            <li class="divider">
+                                <div class="note-icon"><i class="material-icons circle-icon info">shopping_basket</i>
+                                </div>
+                                <div class="note-item">
+                                    1 buah produk telah di update
+                                    <div class="badge badge-pill time">
+                                        5 menit lalu
+                                        <i class="material-icons">alarm</i>
+                                    </div>
+                                </div>
+                            </li>
+                        </ul>
+                        <a role="button" class="btn-footer">Lihat Semua</a>
+                    </div>
                 </div>
             </div>
         </div>
     </main>
-    <footer class="outside-menu px-2 px-sm-4 py-4">
+    <footer class="px-2 px-sm-4 height-nav">
         <div class="d-flex justify-content-between align-items-center h-100">
             <div> &copy; 2017 Ngorder.id
             </div>
@@ -815,7 +878,10 @@
     <script src="js/jquery.easeScroll.js" type="text/javascript"></script>
     <script type="text/javascript" src="js/waves.js"></script>
     <script src="js/jquery.scrollbar.min.js" type="text/javascript"></script>
+    <script type="text/javascript" src="js/masonry.pkgd.min.js"></script>
     <script src="js/costum.js" type="text/javascript"></script>
+    <script type="text/javascript" src="js/moment.min.js"></script>
+    <script type="text/javascript" src="js/fullcalendar.min.js"></script>
     <script>
     </script>
 </body>

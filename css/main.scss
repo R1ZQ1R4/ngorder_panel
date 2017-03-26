@@ -38,6 +38,7 @@ $text-l-icon: rgba(255, 255, 255, 0.3);
 }
 
 .header-content {
+    @include vendor(transition, all 275ms $bezier-1);
     color: #333;
     @extend .bg-white, .shadow-nav;
     margin-bottom: 1.5em;
@@ -114,12 +115,25 @@ $text-l-icon: rgba(255, 255, 255, 0.3);
 * {
     @include vendor(transition-timing-function, $bezier-1);
 }
-
+    .grid-item{
+        width: 100%;
+        float: left;
+        padding: 0 0.75rem 1.5rem 0.75rem;
+    }
 //hide-nav
 .padding-nav {
     padding: 0 0.75rem;
 }
 
+.canvas-wrap {
+    height: 300px;
+    padding: 1.5em;
+    overflow: hidden;
+    position: relative;
+}
+.bg-lightBlue{
+    background: $lightBlue-700;
+}
 .search-nav {
     left: 0;
     @extend .height-nav, .padding-nav, .shadow-nav;
@@ -205,7 +219,7 @@ $text-l-icon: rgba(255, 255, 255, 0.3);
 
 .logo {
     @extend .padding-nav;
-    @include bg-color($lightBlue-700);
+    @include bg-color($lightBlue-800);
     width: 240px;
 }
 
@@ -335,6 +349,13 @@ $text-l-icon: rgba(255, 255, 255, 0.3);
             color: $text-d-3;
             width: 1em;
         }
+        &.active{
+            background: rgba(0,0,0, 0.08);
+            color: $lightBlue-700 !important;
+            i {
+                color: $lightBlue-700 !important;
+            }
+        }
         &:hover {
             color: $lightBlue-700;
             i {
@@ -357,7 +378,11 @@ $text-l-icon: rgba(255, 255, 255, 0.3);
             font-size: 0.825rem !important;
             margin-right: 0.5em;
         }
-        .badge {
+        
+    }
+}
+
+.badge.time{
             text-transform: lowercase;
             font-weight: normal;
             font-style: italic;
@@ -368,9 +393,6 @@ $text-l-icon: rgba(255, 255, 255, 0.3);
                 font-size: 0.8rem;
             }
         }
-    }
-}
-
 .circle-icon {
     text-align: center;
     display: flex-inline;
@@ -479,6 +501,7 @@ html {
 }
 
 body {
+    overflow-x: hidden;
     font-family: Roboto, Helvetica, sans-serif !important;
     @include bg-color(rgba(0, 0, 0, 0.08));
     background-color: rgba(0, 0, 0, 0.08) !important;
@@ -684,6 +707,7 @@ main {
 }
 
 .scroll-top {
+    z-index: 99;
     display: block;
     border-radius: 5px;
     @extend .fixed;
@@ -754,7 +778,8 @@ main {
     height: auto;
     width: 100%;
     background-color: rgba(255, 202, 40, 0.9);
-    @include vendor(box-shadow, 0 1px 4px 1px rgba(0, 0, 0, 0.1));
+    @include vendor(transition, all 275ms $bezier-1);
+    @include vendor(box-shadow, 0 1px 2px 1px rgba(0, 0, 0, 0.12));
     &:hover,
     &:focus {
         text-decoration: none;
@@ -792,10 +817,11 @@ main {
 }
 
 .item-content {
+    @include vendor(transition, all 275ms $bezier-1);
     border-radius: 2px;
     width: 100%;
     background: white;
-    @include vendor(box-shadow, 0 1px 4px 1px rgba(0, 0, 0, 0.2));
+    @include vendor(box-shadow, 0 1px 3px 1px rgba(0, 0, 0, 0.12));
 }
 
 .item-title {
@@ -849,6 +875,70 @@ main {
     }
 }
 
+.item-body{
+    padding: 0 1.5em;
+}
+.note{
+    border-left: 0;
+    border-right: 0;
+    border: 1px solid $text-d-5;
+    position: relative;
+    list-style: none;
+    padding: 1.5em;
+    &:before{
+    z-index: 0;
+    content: '';
+    width: 100%;
+    position: absolute;
+    height: 100%;
+    top: 0;
+    left: 46px;
+    border-left: 1px solid $text-d-5;
+    }
+    li{
+        display: flex;
+        align-items: center;
+        justify-content: space-between;
+        height: auto;
+        padding: 1em 0;
+        .note-icon{
+            z-index: 1;
+        }
+        .note-item{
+            z-index: 1;
+            background: white;
+            border-radius: 2px;
+            padding: 1em;
+            border: 1px solid $text-d-5;
+            text-align: left;
+            max-width: 70%;
+            font-size: 0.825em;
+            display: block;
+            width: 100%;
+            .badge{
+
+                margin-left: -6px;
+                margin-top: 5px;
+                display: block;
+                text-align: left;
+                width: 100%;
+            }
+        }
+    }
+
+}
+.divider{
+    position: relative;
+    &:before{
+    z-index: 0;
+    content: '';
+    width: 100%;
+    position: absolute;
+    height: 100px;
+    top: 50%;
+    border-top: 1px solid $text-d-5;
+    }
+}
 .badge {
     line-height: auto;
     vertical-align: middle;
@@ -866,17 +956,33 @@ main {
     &.danger {
         background-color: $red-500;
     }
-    &.teal {
-        background-color: $teal-500;
-    }
+
 }
 
+.btn-absolute{
+    position: absolute;
+    height: 100%;
+    &.right{
+        top: 0;
+    right: 0;
+    }
+
+}
+.card{
+    .card-block{
+        position: relative;
+        color: white;
+        background: $lightBlue-800;
+        clear: both;
+    }
+}
 footer {
     border-top: 2px solid $color7;
     font-weight: 600;
     color: $text-d-3;
     background: white;
     font-size: 0.9em;
+    @include vendor(transition, all 275ms $bezier-1);
     @include vendor(box-shadow, 0 2px 5px rgba(0, 0, 0, 0.16));
     @include vendor(box-shadow, 0 2px 10px rgba(0, 0, 0, 0.12));
 }
@@ -1014,6 +1120,8 @@ footer {
     }
     .dropdown-menu-responsive {
         position: fixed;
+        height: 75vh;
+        overflow: auto;
         top: 68px;
         right: 0;
         width: 100%;
